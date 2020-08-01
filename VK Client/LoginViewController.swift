@@ -19,10 +19,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-// Кнопка изначально не активная.
         signInButton.isEnabled = false
         
-// Наблюдатель за изменением введенных значений в Text Field.
         loginTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         
@@ -49,6 +47,43 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let checkResult = checkUserData()
+        
+        if !checkResult {
+            showLoginError()
+        }
+        
+        return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        
+        let login = loginTextField.text
+        let password = passwordTextField.text
+        
+        if login == "Gagarin" && password == "1961" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showLoginError() {
+        let alert = UIAlertController(title: "Error",
+                                      message: """
+                                               Your Login: Gagarin
+                                               Your Password: 1961
+                                               """,
+                                      preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok",
+                                   style: .cancel)
+        
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
         
     @IBAction func pressedSignInButton(_ sender: UIButton) {
     }
@@ -56,7 +91,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     
-// Если поля Text Field пустые, то кнопка будет не активна.
     @objc func textFieldDidChange(textField: UITextField) {
         if loginTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             signInButton.isEnabled = false
