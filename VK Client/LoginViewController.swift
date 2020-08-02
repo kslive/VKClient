@@ -87,6 +87,10 @@ class LoginViewController: UIViewController {
         
     @IBAction func pressedSignInButton(_ sender: UIButton) {
     }
+    
+// Метод возврата на экран авторизации:
+    @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
+    }
 }
 
 extension LoginViewController {
