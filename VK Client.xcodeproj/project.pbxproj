@@ -57,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B2DD42C24DAC6E200218FED /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		6B4054C824D63A6B00AAEC22 /* DetailFriend */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +104,47 @@
 		6B4054DC24D63D6D00AAEC22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6B4054DD24D63E4500AAEC22 /* User.swift */,
 				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6B4C731C24DAC60000BA79B2 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054C924D63A9500AAEC22 /* MyFriends */,
+				6B4054C824D63A6B00AAEC22 /* DetailFriend */,
+				6B4C731D24DAC61D00BA79B2 /* Model */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		6B4C731D24DAC61D00BA79B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054DD24D63E4500AAEC22 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B4C731E24DAC63B00BA79B2 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054CA24D63AA500AAEC22 /* MyGroups */,
+				6B4054CB24D63AC200AAEC22 /* AvailableGroups */,
+				6B4054DC24D63D6D00AAEC22 /* Model */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		6B4C731F24DAC65E00BA79B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6B978B6224D17F290073AA20 /* Main.storyboard */,
+				6B978B6524D17F2A0073AA20 /* Assets.xcassets */,
+				6B978B6724D17F2A0073AA20 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6B978B5024D17F290073AA20 = {
@@ -121,17 +166,12 @@
 		6B978B5B24D17F290073AA20 /* VK Client */ = {
 			isa = PBXGroup;
 			children = (
-				6B4054C924D63A9500AAEC22 /* MyFriends */,
-				6B4054C824D63A6B00AAEC22 /* DetailFriend */,
-				6B4054CA24D63AA500AAEC22 /* MyGroups */,
-				6B4054CB24D63AC200AAEC22 /* AvailableGroups */,
-				6B4054DC24D63D6D00AAEC22 /* Model */,
 				6B978B5C24D17F290073AA20 /* AppDelegate.swift */,
 				6B978B5E24D17F290073AA20 /* SceneDelegate.swift */,
-				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
-				6B978B6224D17F290073AA20 /* Main.storyboard */,
-				6B978B6524D17F2A0073AA20 /* Assets.xcassets */,
-				6B978B6724D17F2A0073AA20 /* LaunchScreen.storyboard */,
+				6B2DD42C24DAC6E200218FED /* Authorization */,
+				6B4C731C24DAC60000BA79B2 /* Friends */,
+				6B4C731E24DAC63B00BA79B2 /* Groups */,
+				6B4C731F24DAC65E00BA79B2 /* Resources */,
 				6B978B6A24D17F2A0073AA20 /* Info.plist */,
 			);
 			path = "VK Client";
