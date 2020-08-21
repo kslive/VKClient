@@ -317,8 +317,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH5-tt-kKs" customClass="RadiusView" customModule="VK_Client" customModuleProvider="target">
                                             <rect key="frame" x="20" y="20" width="260" height="260"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-pI-gYH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="260"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-pI-gYH">
+                                                    <rect key="frame" x="0.0" y="0.5" width="260" height="259"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -330,14 +330,21 @@
                                                 <constraint firstAttribute="height" constant="260" id="vca-7v-c95"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-hf-dbO" customClass="LikeControl" customModule="VK_Client" customModuleProvider="target">
+                                            <rect key="frame" x="275" y="280" width="25" height="20"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IH5-tt-kKs" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" constant="20" id="0Rb-TX-iB4"/>
+                                        <constraint firstItem="gpJ-hf-dbO" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" constant="280" id="7Sc-UU-oZk"/>
                                         <constraint firstItem="yaX-Dg-lRX" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" id="Duf-OB-WLE"/>
+                                        <constraint firstItem="gpJ-hf-dbO" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" constant="275" id="J6Y-Xb-eRK"/>
                                         <constraint firstAttribute="trailing" secondItem="yaX-Dg-lRX" secondAttribute="trailing" id="MG5-3P-IBY"/>
+                                        <constraint firstAttribute="trailing" secondItem="gpJ-hf-dbO" secondAttribute="trailing" id="XYJ-6h-K3Z"/>
                                         <constraint firstAttribute="bottom" secondItem="IH5-tt-kKs" secondAttribute="bottom" constant="20" id="bWB-h4-5eo"/>
                                         <constraint firstAttribute="bottom" secondItem="yaX-Dg-lRX" secondAttribute="bottom" id="hvD-Ub-MSo"/>
                                         <constraint firstItem="IH5-tt-kKs" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" constant="20" id="o5n-H8-2cX"/>
+                                        <constraint firstAttribute="bottom" secondItem="gpJ-hf-dbO" secondAttribute="bottom" id="phL-TL-NWG"/>
                                         <constraint firstAttribute="trailing" secondItem="IH5-tt-kKs" secondAttribute="trailing" constant="20" id="rhw-Vd-lFB"/>
                                         <constraint firstItem="yaX-Dg-lRX" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" id="z7L-h3-Per"/>
                                     </constraints>
