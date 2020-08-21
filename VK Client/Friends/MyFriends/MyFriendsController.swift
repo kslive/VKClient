@@ -27,14 +27,12 @@ class MyFriendsController: UITableViewController {
         return 1
     }
 
-// Возвращаем количество элементов массива:
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-// Кастим до MyFriendsCell:
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
         let friend = friends[indexPath.row]
         
@@ -44,12 +42,12 @@ class MyFriendsController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-// Проверяем идентификатор:
+        
         if segue.identifier == "addImage" {
-// Кастим:
+            
             let detailFriendController = segue.destination as? DetailFriendController
-// Проверяем выбранную ячейку:
             if let indexPath = self.tableView.indexPathForSelectedRow {
+                
                 let image = friends[indexPath.row]
                 
                 detailFriendController?.friendsImage.removeAll()

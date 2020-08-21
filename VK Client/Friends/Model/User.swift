@@ -9,6 +9,7 @@
 import Foundation
 
 struct User {
+    
     var nameSurnameFriend: String
     var imageFriend: String
 }

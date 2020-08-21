@@ -30,7 +30,6 @@ class DetailFriendController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-// Кастим до DetailFriendCell:
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailFriendCell", for: indexPath) as! DetailFriendCell
         let friendImage = friendsImage[indexPath.row]
         

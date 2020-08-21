@@ -16,8 +16,6 @@ class AvailableGroupsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        groupImage.layer.cornerRadius = groupImage.frame.size.height / 2
-        groupImage.contentMode = .scaleAspectFill
     }
     
     func configure(for model: Group) {

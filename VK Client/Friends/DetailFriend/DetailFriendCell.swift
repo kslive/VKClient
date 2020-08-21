@@ -15,11 +15,10 @@ class DetailFriendCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        detailFriendImage.layer.cornerRadius = detailFriendImage.frame.size.height / 2
-        detailFriendImage.contentMode = .scaleAspectFill
     }
     
     func configure(for model: User) {
+        
         detailFriendImage.image = UIImage(named: model.imageFriend)
     }
 }

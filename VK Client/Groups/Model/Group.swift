@@ -9,6 +9,7 @@
 import Foundation
 
 struct Group {
+    
     var nameGroup: String
     var imageGroup: String
 }
