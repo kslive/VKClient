@@ -178,6 +178,8 @@
                                         <constraint firstAttribute="bottom" secondItem="65h-hU-wjL" secondAttribute="bottom" id="lYm-ps-joq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="friendImage" destination="pBU-71-IpI" id="3Er-yV-OGy"/>
                                     <outlet property="nameSurnameLabel" destination="65h-hU-wjL" id="yDN-r8-e33"/>
