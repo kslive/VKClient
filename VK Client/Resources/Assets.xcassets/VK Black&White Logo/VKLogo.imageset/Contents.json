@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "VK_Black&White_Logo_transparent.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
