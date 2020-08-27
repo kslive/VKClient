@@ -17,6 +17,7 @@
 		6B4054DB24D63C2300AAEC22 /* AvailableGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4054DA24D63C2300AAEC22 /* AvailableGroupsCell.swift */; };
 		6B4054DE24D63E4500AAEC22 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4054DD24D63E4500AAEC22 /* User.swift */; };
 		6B4054E024D63E4F00AAEC22 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4054DF24D63E4F00AAEC22 /* Group.swift */; };
+		6B6445E724EFFEFB007F7505 /* RadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6445E624EFFEFB007F7505 /* RadiusView.swift */; };
 		6B68F98E24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */; };
 		6B978B5D24D17F290073AA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B978B5C24D17F290073AA20 /* AppDelegate.swift */; };
 		6B978B5F24D17F290073AA20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B978B5E24D17F290073AA20 /* SceneDelegate.swift */; };
@@ -24,6 +25,8 @@
 		6B978B6624D17F2A0073AA20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B978B6524D17F2A0073AA20 /* Assets.xcassets */; };
 		6B978B6924D17F2A0073AA20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B978B6724D17F2A0073AA20 /* LaunchScreen.storyboard */; };
 		6B978B7324D1874F0073AA20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B978B7224D1874F0073AA20 /* LoginViewController.swift */; };
+		6BB1F87424F010B400B19E30 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB1F87324F010B400B19E30 /* LikeControl.swift */; };
+		6BDAA80024EFD2EF0013360C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,7 @@
 		6B4054DA24D63C2300AAEC22 /* AvailableGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableGroupsCell.swift; sourceTree = "<group>"; };
 		6B4054DD24D63E4500AAEC22 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6B4054DF24D63E4F00AAEC22 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		6B6445E624EFFEFB007F7505 /* RadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusView.swift; sourceTree = "<group>"; };
 		6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+KeyboardSettings.swift"; sourceTree = "<group>"; };
 		6B978B5924D17F290073AA20 /* VK Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B978B5C24D17F290073AA20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		6B978B6824D17F2A0073AA20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B978B6A24D17F2A0073AA20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B978B7224D1874F0073AA20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6BB1F87324F010B400B19E30 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
+		6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 			children = (
 				6B4054D024D63B6E00AAEC22 /* DetailFriendController.swift */,
 				6B4054D224D63B8700AAEC22 /* DetailFriendCell.swift */,
+				6BDAA80524EFE3000013360C /* Custom */,
 			);
 			path = DetailFriend;
 			sourceTree = "<group>";
@@ -188,6 +195,16 @@
 			path = "VK Client";
 			sourceTree = "<group>";
 		};
+		6BDAA80524EFE3000013360C /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */,
+				6B6445E624EFFEFB007F7505 /* RadiusView.swift */,
+				6BB1F87324F010B400B19E30 /* LikeControl.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,10 +285,13 @@
 				6B4054CD24D63B0E00AAEC22 /* MyFriendsController.swift in Sources */,
 				6B4054E024D63E4F00AAEC22 /* Group.swift in Sources */,
 				6B978B5D24D17F290073AA20 /* AppDelegate.swift in Sources */,
+				6BDAA80024EFD2EF0013360C /* ShadowView.swift in Sources */,
+				6BB1F87424F010B400B19E30 /* LikeControl.swift in Sources */,
 				6B4054D724D63BEE00AAEC22 /* MyGroupsCell.swift in Sources */,
 				6B4054DE24D63E4500AAEC22 /* User.swift in Sources */,
 				6B4054D524D63BD900AAEC22 /* MyGroupsController.swift in Sources */,
 				6B978B5F24D17F290073AA20 /* SceneDelegate.swift in Sources */,
+				6B6445E724EFFEFB007F7505 /* RadiusView.swift in Sources */,
 				6B4054D324D63B8700AAEC22 /* DetailFriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

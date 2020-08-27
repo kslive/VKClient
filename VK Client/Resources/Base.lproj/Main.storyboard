@@ -178,6 +178,8 @@
                                         <constraint firstAttribute="bottom" secondItem="65h-hU-wjL" secondAttribute="bottom" id="lYm-ps-joq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="friendImage" destination="pBU-71-IpI" id="3Er-yV-OGy"/>
                                     <outlet property="nameSurnameLabel" destination="65h-hU-wjL" id="yDN-r8-e33"/>
@@ -296,24 +298,62 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="70i-uR-ZqY">
-                                            <rect key="frame" x="0.0" y="0.5" width="300" height="299"/>
-                                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaX-Dg-lRX" customClass="ShadowView" customModule="VK_Client" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="300" id="fFt-gO-5cy"/>
-                                                <constraint firstAttribute="width" constant="300" id="g7g-jK-5mj"/>
+                                                <constraint firstAttribute="height" constant="300" id="VKZ-Xd-SBt"/>
+                                                <constraint firstAttribute="width" constant="300" id="rJT-Ei-Esq"/>
                                             </constraints>
-                                        </imageView>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                    <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="valueOpacity">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                    <real key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH5-tt-kKs" customClass="RadiusView" customModule="VK_Client" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="20" width="260" height="260"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-pI-gYH">
+                                                    <rect key="frame" x="0.0" y="0.5" width="260" height="259"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="MeH-pI-gYH" secondAttribute="bottom" id="2vb-cD-wpN"/>
+                                                <constraint firstItem="MeH-pI-gYH" firstAttribute="leading" secondItem="IH5-tt-kKs" secondAttribute="leading" id="75d-SX-Zh7"/>
+                                                <constraint firstAttribute="trailing" secondItem="MeH-pI-gYH" secondAttribute="trailing" id="8a9-NH-V5c"/>
+                                                <constraint firstItem="MeH-pI-gYH" firstAttribute="top" secondItem="IH5-tt-kKs" secondAttribute="top" id="JBq-IP-TnM"/>
+                                                <constraint firstAttribute="width" constant="260" id="tce-ih-DbC"/>
+                                                <constraint firstAttribute="height" constant="260" id="vca-7v-c95"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-hf-dbO" customClass="LikeControl" customModule="VK_Client" customModuleProvider="target">
+                                            <rect key="frame" x="275" y="280" width="25" height="20"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="70i-uR-ZqY" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" id="SmZ-s1-D9J"/>
-                                        <constraint firstAttribute="trailing" secondItem="70i-uR-ZqY" secondAttribute="trailing" id="hgs-Vj-AlC"/>
-                                        <constraint firstAttribute="bottom" secondItem="70i-uR-ZqY" secondAttribute="bottom" id="iO8-sT-7G3"/>
-                                        <constraint firstItem="70i-uR-ZqY" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" id="k2Z-gV-Q5r"/>
+                                        <constraint firstItem="IH5-tt-kKs" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" constant="20" id="0Rb-TX-iB4"/>
+                                        <constraint firstItem="gpJ-hf-dbO" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" constant="280" id="7Sc-UU-oZk"/>
+                                        <constraint firstItem="yaX-Dg-lRX" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" id="Duf-OB-WLE"/>
+                                        <constraint firstItem="gpJ-hf-dbO" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" constant="275" id="J6Y-Xb-eRK"/>
+                                        <constraint firstAttribute="trailing" secondItem="yaX-Dg-lRX" secondAttribute="trailing" id="MG5-3P-IBY"/>
+                                        <constraint firstAttribute="trailing" secondItem="gpJ-hf-dbO" secondAttribute="trailing" id="XYJ-6h-K3Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="IH5-tt-kKs" secondAttribute="bottom" constant="20" id="bWB-h4-5eo"/>
+                                        <constraint firstAttribute="bottom" secondItem="yaX-Dg-lRX" secondAttribute="bottom" id="hvD-Ub-MSo"/>
+                                        <constraint firstItem="IH5-tt-kKs" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" constant="20" id="o5n-H8-2cX"/>
+                                        <constraint firstAttribute="bottom" secondItem="gpJ-hf-dbO" secondAttribute="bottom" id="phL-TL-NWG"/>
+                                        <constraint firstAttribute="trailing" secondItem="IH5-tt-kKs" secondAttribute="trailing" constant="20" id="rhw-Vd-lFB"/>
+                                        <constraint firstItem="yaX-Dg-lRX" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" id="z7L-h3-Per"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="300" height="300"/>
                                 <connections>
-                                    <outlet property="detailFriendImage" destination="70i-uR-ZqY" id="1fe-bs-bng"/>
+                                    <outlet property="detailFriendImage" destination="MeH-pI-gYH" id="3kq-iT-njM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

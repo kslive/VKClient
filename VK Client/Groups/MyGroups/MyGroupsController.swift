@@ -10,7 +10,6 @@ import UIKit
 
 class MyGroupsController: UITableViewController {
     
-// Дефолтный массив:
     var myGroups = [Group]()
 
     override func viewDidLoad() {
@@ -38,36 +37,26 @@ class MyGroupsController: UITableViewController {
         return cell
     }
     
-// Удаление ячеек:
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
-// Если была нажата кнопка удалить:
         if editingStyle == .delete {
-// Удаляем из массива:
             myGroups.remove(at: indexPath.row)
-// Удаляем строку из таблицы:
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         
-// Проверяем идентификатор:
         if segue.identifier == "addGroup" {
-// Ссылка на контроллер, с которого происходит переход:
             guard let availableGroups = segue.source as? AvailableGroupsController else { return }
-// Получаем индекс выделенной ячейки:
             if let indexPath = availableGroups.tableView.indexPathForSelectedRow {
-// Получаем группу:
                 let group = availableGroups.allGroups[indexPath.row]
                 
-// Проверяем повторения и отображаем:
                 if !myGroups.contains(where: {$0.nameGroup == group.nameGroup}) {
                     myGroups.append(group)
                     tableView.reloadData()
                 } else {
                     
-// Alert: - Группа уже существует:
                     let alert = UIAlertController(title: "Choose another group",
                                                   message: "This group already exists on your list",
                                                   preferredStyle: .alert)
