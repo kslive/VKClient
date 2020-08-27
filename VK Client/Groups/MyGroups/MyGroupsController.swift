@@ -17,6 +17,29 @@ class MyGroupsController: UITableViewController {
 
     }
 
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        
+        if segue.identifier == "addGroup" {
+            guard let availableGroups = segue.source as? AvailableGroupsController else { return }
+            if let indexPath = availableGroups.tableView.indexPathForSelectedRow {
+                let group = availableGroups.allGroups[indexPath.row]
+                
+                if !myGroups.contains(where: {$0.nameGroup == group.nameGroup}) {
+                    myGroups.append(group)
+                    tableView.reloadData()
+                } else {
+                    
+                    let alert = UIAlertController(title: "Choose another group",
+                                                  message: "This group already exists on your list",
+                                                  preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .cancel)
+                    alert.addAction(alertAction)
+                    present(alert, animated: true)
+                }
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,29 +65,6 @@ class MyGroupsController: UITableViewController {
         if editingStyle == .delete {
             myGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-    
-    @IBAction func addGroup(segue: UIStoryboardSegue) {
-        
-        if segue.identifier == "addGroup" {
-            guard let availableGroups = segue.source as? AvailableGroupsController else { return }
-            if let indexPath = availableGroups.tableView.indexPathForSelectedRow {
-                let group = availableGroups.allGroups[indexPath.row]
-                
-                if !myGroups.contains(where: {$0.nameGroup == group.nameGroup}) {
-                    myGroups.append(group)
-                    tableView.reloadData()
-                } else {
-                    
-                    let alert = UIAlertController(title: "Choose another group",
-                                                  message: "This group already exists on your list",
-                                                  preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .cancel)
-                    alert.addAction(alertAction)
-                    present(alert, animated: true)
-                }
-            }
         }
     }
 }

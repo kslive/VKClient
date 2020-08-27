@@ -28,6 +28,7 @@ class MyFriendsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.sectionIndexColor = .white
         sortFriend()
     }
     
@@ -98,7 +99,7 @@ class MyFriendsController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .light)
         header.textLabel?.textAlignment = .left
-        header.textLabel?.textColor = .systemBlue
+        header.textLabel?.textColor = .white
     }
     
     // MARK: - Navigation
@@ -115,7 +116,9 @@ class MyFriendsController: UITableViewController {
                 if let friendValue = friendsDictionary[friendKey.uppercased()] {
                     
                     let image = friendValue[indexPath.row]
+                    let name = friendValue[indexPath.row]
                     
+                    detailFriendController?.titleItem = name.nameSurnameFriend
                     detailFriendController?.friendsImage.removeAll()
                     detailFriendController?.friendsImage.append(image)
                 }
