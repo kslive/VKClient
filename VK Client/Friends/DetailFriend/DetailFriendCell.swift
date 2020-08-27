@@ -15,6 +15,7 @@ class DetailFriendCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        detailFriendImage.contentMode = .scaleAspectFill
     }
     
     func configure(for model: User) {

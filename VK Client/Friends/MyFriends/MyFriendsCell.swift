@@ -21,7 +21,7 @@ class MyFriendsCell: UITableViewCell {
     }
     
     func configure(for model: User) {
-        
+
         nameSurnameLabel.text = model.nameSurnameFriend
         friendImage.image = UIImage(named: model.imageFriend)
     }
