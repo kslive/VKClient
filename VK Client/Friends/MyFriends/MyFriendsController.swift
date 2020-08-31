@@ -10,18 +10,18 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
     
-    var friends = [User(nameSurnameFriend: "Иван Иванов", imageFriend: "Иван Иванов"),
-                   User(nameSurnameFriend: "Сергей Сергиев", imageFriend: "Сергей Сергиев"),
-                   User(nameSurnameFriend: "Дмитрий Дмитров", imageFriend: "Дмитрий Дмитров"),
-                   User(nameSurnameFriend: "Александр Лукашенко", imageFriend: "Александр Лукашенко"),
-                   User(nameSurnameFriend: "Владимир Путин", imageFriend: "Владимир Путин"),
-                   User(nameSurnameFriend: "Евгений Иванов", imageFriend: "Евгений Иванов"),
-                   User(nameSurnameFriend: "Никита Рыбов", imageFriend: "Никита Рыбов"),
-                   User(nameSurnameFriend: "Олег Олегов", imageFriend: "Олег Олегов"),
-                   User(nameSurnameFriend: "Эдуард Эдуардов", imageFriend: "Эдуард Эдуардов"),
-                   User(nameSurnameFriend: "Юрий Гагарин", imageFriend: "Юрий Гагарин"),
-                   User(nameSurnameFriend: "Ян Янов", imageFriend: "Ян Янов"),
-                   User(nameSurnameFriend: "Алексей Алексеев", imageFriend: "Алексей Алексеев")]
+    var friends = [User(nameSurnameFriend: "Иванов Иван", imageFriend: "Иван Иванов"),
+                   User(nameSurnameFriend: "Сергиев Сергей", imageFriend: "Сергей Сергиев"),
+                   User(nameSurnameFriend: "Дмитров Дмитрий", imageFriend: "Дмитрий Дмитров"),
+                   User(nameSurnameFriend: "Лукашенко Александр", imageFriend: "Александр Лукашенко"),
+                   User(nameSurnameFriend: "Путин Владимир", imageFriend: "Владимир Путин"),
+                   User(nameSurnameFriend: "Иванов Евгений", imageFriend: "Евгений Иванов"),
+                   User(nameSurnameFriend: "Рыбов Никита", imageFriend: "Никита Рыбов"),
+                   User(nameSurnameFriend: "Олегов Олег", imageFriend: "Олег Олегов"),
+                   User(nameSurnameFriend: "Эдуардов Эдуард", imageFriend: "Эдуард Эдуардов"),
+                   User(nameSurnameFriend: "Гагарин Юрий", imageFriend: "Юрий Гагарин"),
+                   User(nameSurnameFriend: "Янов Ян", imageFriend: "Ян Янов"),
+                   User(nameSurnameFriend: "Алексеев Алексей", imageFriend: "Алексей Алексеев")]
     var friendsSection = [String]()
     var friendsDictionary = [String: [User]]()
 
@@ -76,6 +76,8 @@ class MyFriendsController: UITableViewController {
         
         if let friendValue = friendsDictionary[friendKey.uppercased()] {
             
+// Отмена выделения ячейки при выборе:
+            cell.selectionStyle = .none
             cell.configure(for: friendValue[indexPath.row])
         }
         
@@ -97,6 +99,8 @@ class MyFriendsController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         let header = view as! UITableViewHeaderFooterView
+// Прозрачность header:
+        header.alpha = 0.3
         header.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .light)
         header.textLabel?.textAlignment = .left
         header.textLabel?.textColor = .white
