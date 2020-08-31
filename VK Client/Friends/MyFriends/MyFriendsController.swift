@@ -10,6 +10,22 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
     
+// Объявляем экземпляр класса:
+    let searchController = UISearchController(searchResultsController: nil)
+// Массив:
+    var filteredUsers = [User]()
+// Свойство определяющее является ли строка пустой или нет:
+    var searchBarIsEmpty: Bool {
+        
+        guard let text = searchController.searchBar.text else { return false }
+        
+        return text.isEmpty
+    }
+// Логическое свойство, которое будет возвращать true в том случае, когда поисковой запрос был активирован:
+    var isFiltering: Bool {
+        
+        return searchController.isActive && !searchBarIsEmpty
+    }
     var friends = [User(nameSurnameFriend: "Иванов Иван", imageFriend: "Иван Иванов"),
                    User(nameSurnameFriend: "Сергиев Сергей", imageFriend: "Сергей Сергиев"),
                    User(nameSurnameFriend: "Дмитров Дмитрий", imageFriend: "Дмитрий Дмитров"),
@@ -28,6 +44,7 @@ class MyFriendsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearchController()
         tableView.sectionIndexColor = .white
         sortFriend()
     }
@@ -54,11 +71,20 @@ class MyFriendsController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if isFiltering {
+            return 1
+        }
+        
         return friendsSection.count
     }
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isFiltering {
+            return filteredUsers.count
+        }
         
         let friendKey = friendsSection[section]
         
@@ -69,16 +95,25 @@ class MyFriendsController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFriendsCell", for: indexPath) as! MyFriendsCell
         
-        let friendKey = friendsSection[indexPath.section]
-        
-        if let friendValue = friendsDictionary[friendKey.uppercased()] {
+        if isFiltering {
             
-// Отмена выделения ячейки при выборе:
-            cell.selectionStyle = .none
-            cell.configure(for: friendValue[indexPath.row])
+            cell.configure(for: filteredUsers[indexPath.row])
+        } else {
+            
+            let friendKey = friendsSection[indexPath.section]
+            
+            if var friendValue = friendsDictionary[friendKey.uppercased()] {
+                
+                if isFiltering {
+                    friendValue = filteredUsers
+                }
+                
+                cell.selectionStyle = .none
+                cell.configure(for: friendValue[indexPath.row])
+            }
         }
         
         return cell
@@ -89,7 +124,12 @@ class MyFriendsController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return friendsSection[section].uppercased()
+        
+        if isFiltering {
+            return ""
+        }
+        
+        return friendsSection[section]
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -115,16 +155,26 @@ class MyFriendsController: UITableViewController {
             let detailFriendController = segue.destination as? DetailFriendController
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                let friendKey = friendsSection[indexPath.section]
-                
-                if let friendValue = friendsDictionary[friendKey.uppercased()] {
+                if isFiltering {
                     
-                    let image = friendValue[indexPath.row]
-                    let name = friendValue[indexPath.row]
+                    let friends = filteredUsers[indexPath.row]
                     
-                    detailFriendController?.titleItem = name.nameSurnameFriend
+                    detailFriendController?.titleItem = friends.nameSurnameFriend
                     detailFriendController?.friendsImage.removeAll()
-                    detailFriendController?.friendsImage.append(image)
+                    detailFriendController?.friendsImage.append(friends)
+                } else {
+                    
+                    let friendKey = friendsSection[indexPath.section]
+                    
+                    if let friendValue = friendsDictionary[friendKey.uppercased()] {
+                        
+                        let image = friendValue[indexPath.row]
+                        let name = friendValue[indexPath.row]
+                        
+                        detailFriendController?.titleItem = name.nameSurnameFriend
+                        detailFriendController?.friendsImage.removeAll()
+                        detailFriendController?.friendsImage.append(image)
+                    }
                 }
             }
         }
