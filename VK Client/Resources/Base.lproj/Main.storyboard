@@ -147,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TKT-Fu-e7B">
-                                <rect key="frame" x="82.666666666666686" y="218.99999999999997" width="249" height="358.33333333333326"/>
+                                <rect key="frame" x="82.666666666666686" y="188.99999999999997" width="249" height="358.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-11-K1O">
                                         <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="358.33333333333331"/>
@@ -172,7 +172,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerY" secondItem="YJb-o9-8Z7" secondAttribute="centerY" constant="-50" id="EWt-Pk-9nJ"/>
+                            <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerY" secondItem="YJb-o9-8Z7" secondAttribute="centerY" constant="-80" id="EWt-Pk-9nJ"/>
                             <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerX" secondItem="YJb-o9-8Z7" secondAttribute="centerX" id="SER-Kl-ifb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="laQ-60-UjM"/>

@@ -52,6 +52,19 @@ import UIKit
         likeCountLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
     }
     
+    func animateTitleAppearing() {
+        
+        imageView.transform = CGAffineTransform(scaleX: 1, y: 0)
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.imageView.transform = .identity
+        },
+                       completion: nil)
+    }
+    
     @objc func tapControl(){
         
         isLike.toggle()
@@ -61,11 +74,13 @@ import UIKit
             imageView.image = UIImage(systemName: "heart.fill")
             likeCounter += 1
             setLikeCounterLabel()
+            animateTitleAppearing()
         } else {
             
             imageView.image = UIImage(systemName: "heart")
             likeCounter -= 1
             setLikeCounterLabel()
+            animateTitleAppearing()
         }
     }
     
