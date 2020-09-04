@@ -141,7 +141,7 @@
         <!--Load View Controller-->
         <scene sceneID="14U-Sr-dti">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="bSS-dY-7Ch" customClass="LoadViewController" customModule="VK_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="bSS-dY-7Ch" customClass="LoadViewController" customModule="VK_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YJb-o9-8Z7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
