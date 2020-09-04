@@ -219,21 +219,32 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yY-FI-Uxd">
+                                            <rect key="frame" x="370" y="0.0" width="44" height="44.333333333333336"/>
+                                            <connections>
+                                                <action selector="animatedImage:" destination="agZ-dg-6Bw" eventType="touchUpInside" id="IQ9-2W-pwB"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="65h-hU-wjL" firstAttribute="top" secondItem="l8J-kN-KeD" secondAttribute="top" id="4tL-Tf-de8"/>
+                                        <constraint firstAttribute="trailing" secondItem="2yY-FI-Uxd" secondAttribute="trailing" id="96I-Hb-3yD"/>
                                         <constraint firstAttribute="trailing" secondItem="pBU-71-IpI" secondAttribute="trailing" id="Hka-9I-Lov"/>
+                                        <constraint firstItem="2yY-FI-Uxd" firstAttribute="top" secondItem="l8J-kN-KeD" secondAttribute="top" id="IIh-vv-IAX"/>
                                         <constraint firstItem="pBU-71-IpI" firstAttribute="top" secondItem="l8J-kN-KeD" secondAttribute="top" id="IP8-M3-VR0"/>
                                         <constraint firstItem="65h-hU-wjL" firstAttribute="leading" secondItem="l8J-kN-KeD" secondAttribute="leading" id="Sjp-xv-051"/>
+                                        <constraint firstAttribute="bottom" secondItem="2yY-FI-Uxd" secondAttribute="bottom" id="T7V-Ir-3lv"/>
                                         <constraint firstItem="pBU-71-IpI" firstAttribute="leading" secondItem="65h-hU-wjL" secondAttribute="trailing" id="bfe-Vo-qGA"/>
                                         <constraint firstAttribute="bottom" secondItem="pBU-71-IpI" secondAttribute="bottom" id="fE3-tq-am3"/>
                                         <constraint firstAttribute="bottom" secondItem="65h-hU-wjL" secondAttribute="bottom" id="lYm-ps-joq"/>
+                                        <constraint firstItem="2yY-FI-Uxd" firstAttribute="leading" secondItem="65h-hU-wjL" secondAttribute="trailing" id="oIe-3g-cvZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="animationButton" destination="2yY-FI-Uxd" id="b5s-jW-EVR"/>
                                     <outlet property="friendImage" destination="pBU-71-IpI" id="3Er-yV-OGy"/>
                                     <outlet property="nameSurnameLabel" destination="65h-hU-wjL" id="yDN-r8-e33"/>
                                     <segue destination="NnK-Fh-pp0" kind="show" identifier="addImage" id="4ZL-78-UbY"/>
@@ -256,7 +267,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNc-Qe-yBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ABJ-Kk-Ej7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1978" y="-785"/>
+            <point key="canvasLocation" x="1976.8115942028987" y="-785.49107142857144"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="SwS-rb-ej7">
@@ -288,19 +299,30 @@
                                                 <constraint firstAttribute="width" constant="44" id="xye-tw-npw"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SX-pl-oWp">
+                                            <rect key="frame" x="370" y="0.0" width="44" height="44.333333333333336"/>
+                                            <connections>
+                                                <action selector="animatedImage:" destination="ByA-Dq-PcM" eventType="touchUpInside" id="xZq-21-oG0"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="fgT-bI-IGu" firstAttribute="leading" secondItem="xi5-x9-zr9" secondAttribute="leading" id="3Dj-4d-GGj"/>
                                         <constraint firstItem="duv-WZ-85D" firstAttribute="leading" secondItem="fgT-bI-IGu" secondAttribute="trailing" id="42A-nD-BLA"/>
                                         <constraint firstItem="fgT-bI-IGu" firstAttribute="top" secondItem="xi5-x9-zr9" secondAttribute="top" id="Gh8-Li-1Ql"/>
+                                        <constraint firstItem="9SX-pl-oWp" firstAttribute="top" secondItem="xi5-x9-zr9" secondAttribute="top" id="K9m-RB-m4d"/>
                                         <constraint firstAttribute="trailing" secondItem="duv-WZ-85D" secondAttribute="trailing" id="QC3-rt-qw4"/>
+                                        <constraint firstItem="9SX-pl-oWp" firstAttribute="leading" secondItem="fgT-bI-IGu" secondAttribute="trailing" id="Uhx-h5-7mi"/>
+                                        <constraint firstAttribute="trailing" secondItem="9SX-pl-oWp" secondAttribute="trailing" id="dVc-Wx-FgJ"/>
                                         <constraint firstItem="duv-WZ-85D" firstAttribute="top" secondItem="xi5-x9-zr9" secondAttribute="top" id="eVx-BE-1g4"/>
                                         <constraint firstAttribute="bottom" secondItem="fgT-bI-IGu" secondAttribute="bottom" id="eoA-N9-q5M"/>
                                         <constraint firstAttribute="bottom" secondItem="duv-WZ-85D" secondAttribute="bottom" id="h27-f9-mqA"/>
+                                        <constraint firstAttribute="bottom" secondItem="9SX-pl-oWp" secondAttribute="bottom" id="rMN-tp-4eh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="animateButton" destination="9SX-pl-oWp" id="eQr-CI-vd3"/>
                                     <outlet property="myGroupImage" destination="duv-WZ-85D" id="41T-0f-kJH"/>
                                     <outlet property="myGroupNameLabel" destination="fgT-bI-IGu" id="ANk-c9-aCF"/>
                                 </connections>
@@ -327,7 +349,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDH-MA-1gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="X9M-yI-YK7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="933"/>
+            <point key="canvasLocation" x="1230.4347826086957" y="932.8125"/>
         </scene>
         <!--Detail Friend Controller-->
         <scene sceneID="vP0-i0-xlv">
@@ -374,8 +396,10 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-pI-gYH">
                                                     <rect key="frame" x="0.0" y="1" width="260" height="258.66666666666669"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="MeH-pI-gYH" secondAttribute="bottom" id="2vb-cD-wpN"/>
                                                 <constraint firstItem="MeH-pI-gYH" firstAttribute="leading" secondItem="IH5-tt-kKs" secondAttribute="leading" id="75d-SX-Zh7"/>
@@ -419,7 +443,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjY-sH-8zV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2712" y="-785"/>
+            <point key="canvasLocation" x="2711.594202898551" y="-785.49107142857144"/>
         </scene>
         <!--Available Groups-->
         <scene sceneID="NDS-Z5-sL9">
@@ -451,19 +475,32 @@
                                                 <constraint firstAttribute="height" constant="44" id="i50-NS-dhg"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYR-Rh-Ijg">
+                                            <rect key="frame" x="370" y="0.0" width="44" height="44.333333333333336"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="Jd3-z1-675"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="animatedImage:" destination="cFD-Qh-thS" eventType="touchUpInside" id="AJW-Rn-Zmq"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="gYR-Rh-Ijg" secondAttribute="bottom" id="8Ko-8h-4Wo"/>
                                         <constraint firstAttribute="bottom" secondItem="eAq-mv-wfe" secondAttribute="bottom" id="C6V-a1-vJq"/>
                                         <constraint firstItem="2dw-Iw-eHh" firstAttribute="top" secondItem="RCg-WR-rHm" secondAttribute="top" id="Kgk-to-BBt"/>
                                         <constraint firstItem="2dw-Iw-eHh" firstAttribute="leading" secondItem="RCg-WR-rHm" secondAttribute="leading" id="S5S-VP-MMl"/>
                                         <constraint firstAttribute="trailing" secondItem="2dw-Iw-eHh" secondAttribute="trailing" id="cuR-vO-Owf"/>
+                                        <constraint firstItem="gYR-Rh-Ijg" firstAttribute="top" secondItem="RCg-WR-rHm" secondAttribute="top" id="heg-ke-va8"/>
+                                        <constraint firstAttribute="trailing" secondItem="gYR-Rh-Ijg" secondAttribute="trailing" id="i0o-Wh-cav"/>
                                         <constraint firstAttribute="trailing" secondItem="eAq-mv-wfe" secondAttribute="trailing" id="mY0-11-oKW"/>
                                         <constraint firstAttribute="bottom" secondItem="2dw-Iw-eHh" secondAttribute="bottom" id="xxb-hd-c4v"/>
                                         <constraint firstItem="eAq-mv-wfe" firstAttribute="top" secondItem="RCg-WR-rHm" secondAttribute="top" id="zW6-gy-U5F"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="animateButton" destination="gYR-Rh-Ijg" id="Z3O-9e-q1c"/>
                                     <outlet property="groupImage" destination="eAq-mv-wfe" id="gPk-2q-VoP"/>
                                     <outlet property="groupNameLabel" destination="2dw-Iw-eHh" id="R1h-GK-WPC"/>
                                     <segue destination="9ac-68-djQ" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="rIy-Da-AzE"/>
@@ -480,7 +517,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVE-iw-1ou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9ac-68-djQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="933"/>
+            <point key="canvasLocation" x="1976.8115942028987" y="932.8125"/>
         </scene>
         <!--Friends-->
         <scene sceneID="yZc-2a-l3R">
