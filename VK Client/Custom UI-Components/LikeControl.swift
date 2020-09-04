@@ -74,13 +74,13 @@ import UIKit
             imageView.image = UIImage(systemName: "heart.fill")
             likeCounter += 1
             setLikeCounterLabel()
-            animateTitleAppearing()
+            animateLikeImageView()
         } else {
             
             imageView.image = UIImage(systemName: "heart")
             likeCounter -= 1
             setLikeCounterLabel()
-            animateTitleAppearing()
+            animateLikeImageView()
         }
     }
     
