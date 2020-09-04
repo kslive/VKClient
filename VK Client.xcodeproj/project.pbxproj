@@ -227,11 +227,11 @@
 			isa = PBXGroup;
 			children = (
 				6B2DD42C24DAC6E200218FED /* Authorization */,
+				6B0772CD25021D1400BB9B8A /* LoadView */,
 				6B4C731C24DAC60000BA79B2 /* Friends */,
 				6B4C731E24DAC63B00BA79B2 /* Groups */,
 				6B37E99624FD377800A371EC /* News */,
 				6B37E99D24FD3FE300A371EC /* Custom UI-Components */,
-				6B0772CD25021D1400BB9B8A /* LoadView */,
 				6B4C731F24DAC65E00BA79B2 /* Resources */,
 				6B68F98C24EFA4D600370BE3 /* Supporting Files */,
 			);
