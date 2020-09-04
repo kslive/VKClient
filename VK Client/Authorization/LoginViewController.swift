@@ -14,7 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,16 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    @IBAction func pressedSignInButton(_ sender: UIButton) {
+        
+    }
+    
+    // Метод возврата на экран авторизации:
+    @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
         let checkResult = isUserDataValid()
         
         if !checkResult {
@@ -57,6 +67,8 @@ class LoginViewController: UIViewController {
         
         return checkResult
     }
+    
+    // MARK: - Help Function
     
     func isUserDataValid() -> Bool {
         
@@ -71,6 +83,7 @@ class LoginViewController: UIViewController {
     }
     
     func showLoginError() {
+        
         let alert = UIAlertController(title: "Error",
                                       message: """
                                                Your Login: Gagarin
@@ -83,12 +96,5 @@ class LoginViewController: UIViewController {
         
         alert.addAction(action)
         present(alert, animated: true)
-    }
-        
-    @IBAction func pressedSignInButton(_ sender: UIButton) {
-    }
-    
-// Метод возврата на экран авторизации:
-    @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
     }
 }

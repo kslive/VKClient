@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ss9-TQ-gcB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ss9-TQ-gcB">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -86,7 +86,7 @@
                                                 <state key="normal" title="SIGN IN"/>
                                                 <connections>
                                                     <action selector="pressedSignInButton:" destination="ss9-TQ-gcB" eventType="touchUpInside" id="fEb-8S-PMb"/>
-                                                    <segue destination="mtP-N4-PqC" kind="presentation" modalPresentationStyle="fullScreen" id="9I9-BJ-h9u"/>
+                                                    <segue destination="bSS-dY-7Ch" kind="showDetail" id="2Cp-YL-khz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -126,7 +126,9 @@
                         <viewLayoutGuide key="safeArea" id="bTv-bl-zpL"/>
                     </view>
                     <connections>
+                        <outlet property="loginLabel" destination="Tyx-6f-xuj" id="lhH-ID-89W"/>
                         <outlet property="loginTextField" destination="dHY-7m-ngw" id="ykD-u2-xPT"/>
+                        <outlet property="passwordLabel" destination="ZV5-Np-Wki" id="b4G-hr-mAb"/>
                         <outlet property="passwordTextField" destination="6Tl-Ch-pS5" id="Aw5-0y-kgS"/>
                         <outlet property="scrollView" destination="MfF-GC-M8y" id="HrN-fI-Rbv"/>
                         <outlet property="signInButton" destination="xqm-k9-gX1" id="Ai3-XB-tEV"/>
@@ -134,7 +136,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edx-e4-cHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="39"/>
+            <point key="canvasLocation" x="-1003" y="39"/>
+        </scene>
+        <!--Load View Controller-->
+        <scene sceneID="14U-Sr-dti">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="bSS-dY-7Ch" customClass="LoadViewController" customModule="VK_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YJb-o9-8Z7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TKT-Fu-e7B">
+                                <rect key="frame" x="82.666666666666686" y="218.99999999999997" width="249" height="358.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-11-K1O">
+                                        <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="358.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-UP-w16">
+                                        <rect key="frame" x="86.333333333333343" y="0.0" width="76.333333333333343" height="358.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bes-5R-N1f">
+                                        <rect key="frame" x="172.66666666666669" y="0.0" width="76.333333333333314" height="358.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerY" secondItem="YJb-o9-8Z7" secondAttribute="centerY" constant="-50" id="EWt-Pk-9nJ"/>
+                            <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerX" secondItem="YJb-o9-8Z7" secondAttribute="centerX" id="SER-Kl-ifb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="laQ-60-UjM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QGb-kU-rCw"/>
+                    <connections>
+                        <outlet property="firstPointLoad" destination="jGA-11-K1O" id="wlI-U9-FyP"/>
+                        <outlet property="secondPointLoad" destination="zbl-UP-w16" id="NrE-JI-kc2"/>
+                        <outlet property="thirdPointLoad" destination="bes-5R-N1f" id="7B8-tK-voE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oD9-nZ-bCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259.4202898550725" y="38.839285714285715"/>
         </scene>
         <!--Friends-->
         <scene sceneID="HnS-65-9XE">
@@ -452,7 +504,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="QXW-U5-4rh">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="mtP-N4-PqC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TapBar" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="mtP-N4-PqC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="k6a-oS-wUB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yB9-X3-5mf">
