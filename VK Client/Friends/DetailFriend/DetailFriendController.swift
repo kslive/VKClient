@@ -22,13 +22,12 @@ class DetailFriendController: UICollectionViewController {
     // MARK: Help Function
     
     private func setupNavigationBar() {
-// Удаление текста из кнопки возврата:
+        
         if let topItem = navigationController?.navigationBar.topItem {
             
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
         
-// Передача title:
         guard titleItem != nil else { return }
         title = titleItem
     }
