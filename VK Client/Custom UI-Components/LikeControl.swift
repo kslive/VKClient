@@ -52,7 +52,7 @@ import UIKit
         likeCountLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
     }
     
-    func animateTitleAppearing() {
+    func animateLikeImageView() {
         
         imageView.transform = CGAffineTransform(scaleX: 1, y: 0)
         
