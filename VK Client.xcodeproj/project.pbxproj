@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0772CF250223AA00BB9B8A /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0772CE250223AA00BB9B8A /* LoadViewController.swift */; };
 		6B37E98F24FD07AC00A371EC /* MyFriendsController+UISearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37E98E24FD07AC00A371EC /* MyFriendsController+UISearchController.swift */; };
 		6B37E99524FD260B00A371EC /* MyGroupsController+UISearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37E99424FD260B00A371EC /* MyGroupsController+UISearchController.swift */; };
 		6B37E99824FD379300A371EC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37E99724FD379300A371EC /* NewsViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B0772CE250223AA00BB9B8A /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		6B37E98E24FD07AC00A371EC /* MyFriendsController+UISearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyFriendsController+UISearchController.swift"; sourceTree = "<group>"; };
 		6B37E99424FD260B00A371EC /* MyGroupsController+UISearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyGroupsController+UISearchController.swift"; sourceTree = "<group>"; };
 		6B37E99724FD379300A371EC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B0772CD25021D1400BB9B8A /* LoadView */ = {
+			isa = PBXGroup;
+			children = (
+				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+			);
+			path = LoadView;
+			sourceTree = "<group>";
+		};
 		6B2DD42C24DAC6E200218FED /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6B2DD42C24DAC6E200218FED /* Authorization */,
+				6B0772CD25021D1400BB9B8A /* LoadView */,
 				6B4C731C24DAC60000BA79B2 /* Friends */,
 				6B4C731E24DAC63B00BA79B2 /* Groups */,
 				6B37E99624FD377800A371EC /* News */,
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4054CF24D63B2900AAEC22 /* MyFriendsCell.swift in Sources */,
+				6B0772CF250223AA00BB9B8A /* LoadViewController.swift in Sources */,
 				6B4054D924D63C0F00AAEC22 /* AvailableGroupsController.swift in Sources */,
 				6B68F98E24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift in Sources */,
 				6B37E99824FD379300A371EC /* NewsViewController.swift in Sources */,
