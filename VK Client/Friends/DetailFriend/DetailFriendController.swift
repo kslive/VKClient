@@ -19,6 +19,12 @@ class DetailFriendController: UICollectionViewController {
         setupNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: Help Function
     
     private func setupNavigationBar() {
