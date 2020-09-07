@@ -147,23 +147,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TKT-Fu-e7B">
-                                <rect key="frame" x="82.666666666666686" y="188.99999999999997" width="249" height="358.33333333333326"/>
+                                <rect key="frame" x="158.66666666666666" y="338.33333333333331" width="97" height="119.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGA-11-K1O">
-                                        <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="358.33333333333331"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="119.66666666666667"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-UP-w16">
-                                        <rect key="frame" x="86.333333333333343" y="0.0" width="76.333333333333343" height="358.33333333333331"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                        <rect key="frame" x="35.666666666666686" y="0.0" width="25.666666666666671" height="119.66666666666667"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bes-5R-N1f">
-                                        <rect key="frame" x="172.66666666666669" y="0.0" width="76.333333333333314" height="358.33333333333331"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                        <rect key="frame" x="71.333333333333343" y="0.0" width="25.666666666666671" height="119.66666666666667"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -180,7 +180,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cY0-cT-ytI" firstAttribute="leading" secondItem="laQ-60-UjM" secondAttribute="leading" constant="157" id="6Ry-qE-LV1"/>
-                            <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerY" secondItem="YJb-o9-8Z7" secondAttribute="centerY" constant="-80" id="EWt-Pk-9nJ"/>
+                            <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerY" secondItem="YJb-o9-8Z7" secondAttribute="centerY" constant="-50" id="EWt-Pk-9nJ"/>
                             <constraint firstItem="cY0-cT-ytI" firstAttribute="top" secondItem="laQ-60-UjM" secondAttribute="top" id="HMI-KL-k15"/>
                             <constraint firstItem="TKT-Fu-e7B" firstAttribute="centerX" secondItem="YJb-o9-8Z7" secondAttribute="centerX" id="SER-Kl-ifb"/>
                             <constraint firstItem="laQ-60-UjM" firstAttribute="trailing" secondItem="cY0-cT-ytI" secondAttribute="trailing" constant="157" id="e8f-p2-Cj3"/>
