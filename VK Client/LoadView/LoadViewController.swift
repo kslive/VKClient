@@ -29,9 +29,9 @@ class LoadViewController: UIViewController {
     
     func animatePointsLoad() {
         
-        firstPointLoad.transform = CGAffineTransform(translationX: 1, y: 10)
-        secondPointLoad.transform = CGAffineTransform(translationX: 1, y: 10)
-        thirdPointLoad.transform = CGAffineTransform(translationX: 1, y: 10)
+        firstPointLoad.transform = CGAffineTransform(translationX: 1, y: 5)
+        secondPointLoad.transform = CGAffineTransform(translationX: 1, y: 5)
+        thirdPointLoad.transform = CGAffineTransform(translationX: 1, y: 5)
         
         UIView.animate(withDuration: 0.5,
                        delay: 0,
