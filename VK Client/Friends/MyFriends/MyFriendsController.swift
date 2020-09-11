@@ -10,34 +10,31 @@ import UIKit
 
 class MyFriendsController: UITableViewController {
     
-// Объявляем экземпляр класса:
     let searchController = UISearchController(searchResultsController: nil)
-// Массив:
     var filteredUsers = [User]()
-// Свойство определяющее является ли строка пустой или нет:
     var searchBarIsEmpty: Bool {
         
         guard let text = searchController.searchBar.text else { return false }
         
         return text.isEmpty
     }
-// Логическое свойство, которое будет возвращать true в том случае, когда поисковой запрос был активирован:
+    
     var isFiltering: Bool {
         
         return searchController.isActive && !searchBarIsEmpty
     }
-    var friends = [User(nameSurnameFriend: "Иванов Иван", imageFriend: "Иван Иванов"),
-                   User(nameSurnameFriend: "Сергиев Сергей", imageFriend: "Сергей Сергиев"),
-                   User(nameSurnameFriend: "Дмитров Дмитрий", imageFriend: "Дмитрий Дмитров"),
-                   User(nameSurnameFriend: "Лукашенко Александр", imageFriend: "Александр Лукашенко"),
-                   User(nameSurnameFriend: "Путин Владимир", imageFriend: "Владимир Путин"),
-                   User(nameSurnameFriend: "Иванов Евгений", imageFriend: "Евгений Иванов"),
-                   User(nameSurnameFriend: "Рыбов Никита", imageFriend: "Никита Рыбов"),
-                   User(nameSurnameFriend: "Олегов Олег", imageFriend: "Олег Олегов"),
-                   User(nameSurnameFriend: "Эдуардов Эдуард", imageFriend: "Эдуард Эдуардов"),
-                   User(nameSurnameFriend: "Гагарин Юрий", imageFriend: "Юрий Гагарин"),
-                   User(nameSurnameFriend: "Янов Ян", imageFriend: "Ян Янов"),
-                   User(nameSurnameFriend: "Алексеев Алексей", imageFriend: "Алексей Алексеев")]
+    var friends = [User(nameSurnameFriend: "Иванов Иван", imageFriend: ["Иван Иванов", "Иванов Иван"]),
+                   User(nameSurnameFriend: "Сергиев Сергей", imageFriend: ["Сергей Сергиев", "Сергиев Сергей"]),
+                   User(nameSurnameFriend: "Дмитров Дмитрий", imageFriend: ["Дмитрий Дмитров", "Дмитров Дмитрий"]),
+                   User(nameSurnameFriend: "Лукашенко Александр", imageFriend: ["Александр Лукашенко", "Лукашенко Александр"]),
+                   User(nameSurnameFriend: "Путин Владимир", imageFriend: ["Владимир Путин", "Путин Владимир"]),
+                   User(nameSurnameFriend: "Иванов Евгений", imageFriend: ["Евгений Иванов", "Иванов Евгений"]),
+                   User(nameSurnameFriend: "Рыбов Никита", imageFriend: ["Никита Рыбов", "Рыбов Никита"]),
+                   User(nameSurnameFriend: "Олегов Олег", imageFriend: ["Олег Олегов", "Олегов Олег"]),
+                   User(nameSurnameFriend: "Эдуардов Эдуард", imageFriend: ["Эдуард Эдуардов", "Эдуардов Эдуард"]),
+                   User(nameSurnameFriend: "Гагарин Юрий", imageFriend: ["Юрий Гагарин", "Гагарин Юрий"]),
+                   User(nameSurnameFriend: "Янов Ян", imageFriend: ["Ян Янов", "Янов Ян"]),
+                   User(nameSurnameFriend: "Алексеев Алексей", imageFriend: ["Алексей Алексеев", "Алексеев Алексей"])]
     var friendsSection = [String]()
     var friendsDictionary = [String: [User]]()
 
@@ -139,7 +136,7 @@ class MyFriendsController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         let header = view as! UITableViewHeaderFooterView
-// Прозрачность header:
+        
         header.alpha = 0.3
         header.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .light)
         header.textLabel?.textAlignment = .left

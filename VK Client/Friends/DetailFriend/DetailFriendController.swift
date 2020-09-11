@@ -19,6 +19,12 @@ class DetailFriendController: UICollectionViewController {
         setupNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: Help Function
     
     private func setupNavigationBar() {
@@ -30,6 +36,18 @@ class DetailFriendController: UICollectionViewController {
         
         guard titleItem != nil else { return }
         title = titleItem
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "seeImages" else { return }
+        
+        let pageViewController = segue.destination as? PageViewController
+        
+        pageViewController?.titleItem = titleItem
+        pageViewController?.imagesUser = friendsImage
     }
 
     // MARK: UICollectionViewDataSource
