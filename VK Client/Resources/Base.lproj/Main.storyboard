@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edx-e4-cHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1003" y="39"/>
+            <point key="canvasLocation" x="-593" y="39"/>
         </scene>
         <!--Load View Controller-->
         <scene sceneID="14U-Sr-dti">
@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oD9-nZ-bCF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-317" y="39"/>
+            <point key="canvasLocation" x="291" y="39"/>
         </scene>
         <!--Friends-->
         <scene sceneID="HnS-65-9XE">
@@ -277,7 +277,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNc-Qe-yBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ABJ-Kk-Ej7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="-785.49107142857144"/>
+            <point key="canvasLocation" x="2597" y="-785"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="SwS-rb-ej7">
@@ -359,7 +359,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDH-MA-1gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="X9M-yI-YK7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1230.4347826086957" y="932.8125"/>
+            <point key="canvasLocation" x="2191" y="933"/>
         </scene>
         <!--Detail Friend Controller-->
         <scene sceneID="vP0-i0-xlv">
@@ -465,7 +465,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjY-sH-8zV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2711.594202898551" y="-785.49107142857144"/>
+            <point key="canvasLocation" x="3287" y="-785"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="qHp-VX-2aA">
@@ -476,7 +476,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xob-a8-gOI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3467" y="-785"/>
+            <point key="canvasLocation" x="4010" y="-785"/>
         </scene>
         <!--Images Friend Controller-->
         <scene sceneID="d3O-0B-RRn">
@@ -545,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBs-yh-4E7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4171.0144927536239" y="-785.49107142857144"/>
+            <point key="canvasLocation" x="4745" y="-785"/>
         </scene>
         <!--Available Groups-->
         <scene sceneID="NDS-Z5-sL9">
@@ -619,12 +619,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVE-iw-1ou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9ac-68-djQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="932.8125"/>
+            <point key="canvasLocation" x="2920" y="933"/>
         </scene>
         <!--Friends-->
         <scene sceneID="yZc-2a-l3R">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ytf-mu-vih" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ytf-mu-vih" customClass="CustomNavigationController" customModule="VK_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person.3.fill" catalog="system" id="qdN-Ot-WKa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="oGt-nN-mF3">
@@ -638,7 +638,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0B-Yg-wFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="-785"/>
+            <point key="canvasLocation" x="1867" y="-785"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QXW-U5-4rh">
@@ -660,7 +660,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMh-Aa-YG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="39"/>
+            <point key="canvasLocation" x="1086" y="39"/>
         </scene>
         <!--News-->
         <scene sceneID="OEs-H9-nVQ">
@@ -783,7 +783,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wML-e2-icz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Pdq-2Z-ltK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2105.7971014492755" y="38.839285714285715"/>
+            <point key="canvasLocation" x="2712" y="39"/>
         </scene>
         <!--Groups-->
         <scene sceneID="d4y-HC-LRS">
@@ -802,12 +802,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8T-qh-ewT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="933"/>
+            <point key="canvasLocation" x="1493" y="933"/>
         </scene>
         <!--News-->
         <scene sceneID="cqd-Fk-qsx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="zd7-WH-m27" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="zd7-WH-m27" customClass="CustomNavigationController" customModule="VK_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="list.bullet" catalog="system" id="iCs-NU-YAB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="fH8-lt-LTP">
@@ -821,7 +821,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhA-9R-hgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1352" y="39"/>
+            <point key="canvasLocation" x="1910" y="39"/>
         </scene>
     </scenes>
     <resources>
