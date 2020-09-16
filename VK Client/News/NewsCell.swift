@@ -16,6 +16,7 @@ class NewsCell: UITableViewCell {
             imageGroup.contentMode = .scaleAspectFill
         }
     }
+    
     @IBOutlet weak var nameGroup: UILabel!
     @IBOutlet weak var dateGroup: UILabel!
     @IBOutlet weak var textFromGroup: UILabel!
@@ -24,5 +25,13 @@ class NewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
+    func configure(for model: User) {
+        
+        nameGroup.text = model.nameSurnameFriend
+        imageGroup.image = UIImage(named: model.imageFriend.last!)
+        dateGroup.text = "\(Int.random(in: 1...31)).\(Int.random(in: 1...12)).\(Int.random(in: 2018...2020))"
+        imageFromGroup.image = UIImage(named: model.imageFriend.first!)
+        textFromGroup.text = "\(model.nameSurnameFriend) опубликовал новое фото!"
+    }
 }

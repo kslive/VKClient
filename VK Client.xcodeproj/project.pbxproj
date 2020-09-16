@@ -259,9 +259,9 @@
 		6B978B5B24D17F290073AA20 /* VK Client */ = {
 			isa = PBXGroup;
 			children = (
-				6B5145EB250F585500A752A1 /* Custom Transition */,
 				6B2DD42C24DAC6E200218FED /* Authorization */,
 				6B0772CD25021D1400BB9B8A /* LoadView */,
+				6B5145EB250F585500A752A1 /* Custom Transition */,
 				6B4C731C24DAC60000BA79B2 /* Friends */,
 				6B4C731E24DAC63B00BA79B2 /* Groups */,
 				6B37E99624FD377800A371EC /* News */,
