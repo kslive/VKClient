@@ -89,19 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B0772CD25021D1400BB9B8A /* LoadView */ = {
+		6B0772CD25021D1400BB9B8A /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+				6B515477251A01F100E60EB7 /* Controller */,
 			);
-			path = LoadView;
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		6B2DD42C24DAC6E200218FED /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
-				6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */,
+				6B515475251A01D400E60EB7 /* Controller */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -109,28 +108,27 @@
 		6B37E99624FD377800A371EC /* News */ = {
 			isa = PBXGroup;
 			children = (
-				6B37E99724FD379300A371EC /* NewsViewController.swift */,
-				6B37E99B24FD396600A371EC /* NewsCell.swift */,
-				6B37E99924FD390600A371EC /* NewsViewController+UITableViewController.swift */,
+				6B5154A1251A05BC00E60EB7 /* Controller */,
+				6B5154A3251A05C100E60EB7 /* View */,
 			);
 			path = News;
 			sourceTree = "<group>";
 		};
-		6B37E99D24FD3FE300A371EC /* Custom UI-Components */ = {
+		6B37E99D24FD3FE300A371EC /* CustomUI-Components */ = {
 			isa = PBXGroup;
 			children = (
 				6BB1F87324F010B400B19E30 /* LikeControl.swift */,
+				6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */,
+				6B6445E624EFFEFB007F7505 /* RadiusView.swift */,
 			);
-			path = "Custom UI-Components";
+			path = "CustomUI-Components";
 			sourceTree = "<group>";
 		};
 		6B4054C824D63A6B00AAEC22 /* DetailFriend */ = {
 			isa = PBXGroup;
 			children = (
-				6B4054D024D63B6E00AAEC22 /* DetailFriendController.swift */,
-				6B4054D224D63B8700AAEC22 /* DetailFriendCell.swift */,
-				6B5781132506015D005F887C /* ImagesFriends */,
-				6BDAA80524EFE3000013360C /* Custom */,
+				6B515486251A03EE00E60EB7 /* Controller */,
+				6B515488251A03F600E60EB7 /* View */,
 			);
 			path = DetailFriend;
 			sourceTree = "<group>";
@@ -138,9 +136,8 @@
 		6B4054C924D63A9500AAEC22 /* MyFriends */ = {
 			isa = PBXGroup;
 			children = (
-				6B4054CC24D63B0E00AAEC22 /* MyFriendsController.swift */,
-				6B4054CE24D63B2900AAEC22 /* MyFriendsCell.swift */,
-				6B37E98E24FD07AC00A371EC /* MyFriendsController+UISearchController.swift */,
+				6B515482251A03B100E60EB7 /* Controller */,
+				6B515484251A03B800E60EB7 /* View */,
 			);
 			path = MyFriends;
 			sourceTree = "<group>";
@@ -148,9 +145,8 @@
 		6B4054CA24D63AA500AAEC22 /* MyGroups */ = {
 			isa = PBXGroup;
 			children = (
-				6B4054D424D63BD900AAEC22 /* MyGroupsController.swift */,
-				6B4054D624D63BEE00AAEC22 /* MyGroupsCell.swift */,
-				6B37E99424FD260B00A371EC /* MyGroupsController+UISearchController.swift */,
+				6B515499251A058000E60EB7 /* Controller */,
+				6B51549B251A058700E60EB7 /* View */,
 			);
 			path = MyGroups;
 			sourceTree = "<group>";
@@ -158,59 +154,13 @@
 		6B4054CB24D63AC200AAEC22 /* AvailableGroups */ = {
 			isa = PBXGroup;
 			children = (
-				6B4054D824D63C0F00AAEC22 /* AvailableGroupsController.swift */,
-				6B4054DA24D63C2300AAEC22 /* AvailableGroupsCell.swift */,
+				6B51549D251A05A100E60EB7 /* Controller */,
+				6B51549F251A05A700E60EB7 /* View */,
 			);
 			path = AvailableGroups;
 			sourceTree = "<group>";
 		};
-		6B4054DC24D63D6D00AAEC22 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6B4C731C24DAC60000BA79B2 /* Friends */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054C924D63A9500AAEC22 /* MyFriends */,
-				6B4054C824D63A6B00AAEC22 /* DetailFriend */,
-				6B4C731D24DAC61D00BA79B2 /* Model */,
-			);
-			path = Friends;
-			sourceTree = "<group>";
-		};
-		6B4C731D24DAC61D00BA79B2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054DD24D63E4500AAEC22 /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6B4C731E24DAC63B00BA79B2 /* Groups */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054CA24D63AA500AAEC22 /* MyGroups */,
-				6B4054CB24D63AC200AAEC22 /* AvailableGroups */,
-				6B4054DC24D63D6D00AAEC22 /* Model */,
-			);
-			path = Groups;
-			sourceTree = "<group>";
-		};
-		6B4C731F24DAC65E00BA79B2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6B978B6224D17F290073AA20 /* Main.storyboard */,
-				6B978B6524D17F2A0073AA20 /* Assets.xcassets */,
-				6B978B6724D17F2A0073AA20 /* LaunchScreen.storyboard */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		6B5145EB250F585500A752A1 /* Custom Transition */ = {
+		6B5145EB250F585500A752A1 /* CustomTransition */ = {
 			isa = PBXGroup;
 			children = (
 				6B5145EC250F598B00A752A1 /* PopAnimator.swift */,
@@ -218,14 +168,204 @@
 				6B5145F0250F59F500A752A1 /* CustomNavigationController.swift */,
 				6B5145F2250F5E1C00A752A1 /* CustomInteractiveTransition.swift */,
 			);
-			path = "Custom Transition";
+			path = CustomTransition;
+			sourceTree = "<group>";
+		};
+		6B515470251A017800E60EB7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6B515474251A01A500E60EB7 /* View */,
+				6B515471251A019100E60EB7 /* Controller */,
+				6B51547A251A02A800E60EB7 /* Service */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6B515471251A019100E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B978B5C24D17F290073AA20 /* AppDelegate.swift */,
+				6B978B5E24D17F290073AA20 /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B515474251A01A500E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B978B6224D17F290073AA20 /* Main.storyboard */,
+				6B978B6724D17F2A0073AA20 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B515475251A01D400E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
+				6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B515477251A01F100E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B51547A251A02A800E60EB7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6B37E99D24FD3FE300A371EC /* CustomUI-Components */,
+				6B5145EB250F585500A752A1 /* CustomTransition */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6B51547D251A036F00E60EB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054DD24D63E4500AAEC22 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B515482251A03B100E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054CC24D63B0E00AAEC22 /* MyFriendsController.swift */,
+				6B37E98E24FD07AC00A371EC /* MyFriendsController+UISearchController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B515484251A03B800E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054CE24D63B2900AAEC22 /* MyFriendsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B515486251A03EE00E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054D024D63B6E00AAEC22 /* DetailFriendController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B515488251A03F600E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054D224D63B8700AAEC22 /* DetailFriendCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B51548A251A043A00E60EB7 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				6B51547D251A036F00E60EB7 /* Model */,
+				6B4054C924D63A9500AAEC22 /* MyFriends */,
+				6B4054C824D63A6B00AAEC22 /* DetailFriend */,
+				6B5781132506015D005F887C /* ImagesFriends */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		6B51548F251A051700E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B5781202506200D005F887C /* ImagesFriendController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B515491251A051D00E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B57811E25061FA4005F887C /* PageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B515493251A055100E60EB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B515495251A055A00E60EB7 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				6B515493251A055100E60EB7 /* Model */,
+				6B4054CA24D63AA500AAEC22 /* MyGroups */,
+				6B4054CB24D63AC200AAEC22 /* AvailableGroups */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		6B515499251A058000E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054D424D63BD900AAEC22 /* MyGroupsController.swift */,
+				6B37E99424FD260B00A371EC /* MyGroupsController+UISearchController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B51549B251A058700E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054D624D63BEE00AAEC22 /* MyGroupsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B51549D251A05A100E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054D824D63C0F00AAEC22 /* AvailableGroupsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B51549F251A05A700E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054DA24D63C2300AAEC22 /* AvailableGroupsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B5154A1251A05BC00E60EB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B37E99724FD379300A371EC /* NewsViewController.swift */,
+				6B37E99924FD390600A371EC /* NewsViewController+UITableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B5154A3251A05C100E60EB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B37E99B24FD396600A371EC /* NewsCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6B5781132506015D005F887C /* ImagesFriends */ = {
 			isa = PBXGroup;
 			children = (
-				6B57811E25061FA4005F887C /* PageViewController.swift */,
-				6B5781202506200D005F887C /* ImagesFriendController.swift */,
+				6B51548F251A051700E60EB7 /* Controller */,
+				6B515491251A051D00E60EB7 /* View */,
 			);
 			path = ImagesFriends;
 			sourceTree = "<group>";
@@ -233,8 +373,7 @@
 		6B68F98C24EFA4D600370BE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B978B5C24D17F290073AA20 /* AppDelegate.swift */,
-				6B978B5E24D17F290073AA20 /* SceneDelegate.swift */,
+				6B978B6524D17F2A0073AA20 /* Assets.xcassets */,
 				6B978B6A24D17F2A0073AA20 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -259,26 +398,15 @@
 		6B978B5B24D17F290073AA20 /* VK Client */ = {
 			isa = PBXGroup;
 			children = (
+				6B515470251A017800E60EB7 /* Application */,
 				6B2DD42C24DAC6E200218FED /* Authorization */,
-				6B0772CD25021D1400BB9B8A /* LoadView */,
-				6B5145EB250F585500A752A1 /* Custom Transition */,
-				6B4C731C24DAC60000BA79B2 /* Friends */,
-				6B4C731E24DAC63B00BA79B2 /* Groups */,
+				6B0772CD25021D1400BB9B8A /* Loading */,
+				6B51548A251A043A00E60EB7 /* Friends */,
+				6B515495251A055A00E60EB7 /* Groups */,
 				6B37E99624FD377800A371EC /* News */,
-				6B37E99D24FD3FE300A371EC /* Custom UI-Components */,
-				6B4C731F24DAC65E00BA79B2 /* Resources */,
 				6B68F98C24EFA4D600370BE3 /* Supporting Files */,
 			);
 			path = "VK Client";
-			sourceTree = "<group>";
-		};
-		6BDAA80524EFE3000013360C /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */,
-				6B6445E624EFFEFB007F7505 /* RadiusView.swift */,
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Eugene Kiselev";
 				TargetAttributes = {
 					6B978B5824D17F290073AA20 = {
@@ -432,6 +560,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -492,6 +621,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
