@@ -91,14 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B0772CD25021D1400BB9B8A /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				6B515477251A01F100E60EB7 /* Controller */,
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
 		6B2DD42C24DAC6E200218FED /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,13 +198,6 @@
 			children = (
 				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
 				6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6B515477251A01F100E60EB7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
 			);
 			path = Controller;
@@ -411,7 +396,6 @@
 			children = (
 				6B515470251A017800E60EB7 /* Application */,
 				6B2DD42C24DAC6E200218FED /* Authorization */,
-				6B0772CD25021D1400BB9B8A /* Loading */,
 				6B51548A251A043A00E60EB7 /* Friends */,
 				6B515495251A055A00E60EB7 /* Groups */,
 				6B37E99624FD377800A371EC /* News */,
