@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class RadiusView: UIView {
+class RadiusView: UIView {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)

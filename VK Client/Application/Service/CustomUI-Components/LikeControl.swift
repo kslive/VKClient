@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class LikeControl: UIControl {
+class LikeControl: UIControl {
     
     var imageView = UIImageView()
     var likeCountLabel = UILabel()
