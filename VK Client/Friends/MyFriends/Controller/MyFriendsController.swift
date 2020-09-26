@@ -44,6 +44,11 @@ class MyFriendsController: UITableViewController {
         setupSearchController()
         tableView.sectionIndexColor = .white
         sortFriend()
+        
+        Network().fetchRequestFriends()
+        Network().fetchRequestPhotosUser(for: Session.shared.userId)
+        Network().fetchRequestGroupsUser()
+        Network().fetchRequestSearchGroups(text: "MDK")
     }
     
     // MARK: - Help Function

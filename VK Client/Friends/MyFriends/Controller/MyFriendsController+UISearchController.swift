@@ -29,6 +29,7 @@ extension MyFriendsController: UISearchResultsUpdating {
         
         let searchBar = searchController.searchBar
         filterContentForSearchText(searchBar.text!)
+        
     }
     
     func filterContentForSearchText(_ searchText: String) {

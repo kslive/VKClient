@@ -51,6 +51,11 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
         Session.shared.userId = Int(userID ?? "")
         Session.shared.token = token!
         
+        guard token != nil else { return }
+        
+        let loadViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
+        self.present(loadViewController, animated: true, completion: nil)
+        
         decisionHandler(.cancel)
     }
 }

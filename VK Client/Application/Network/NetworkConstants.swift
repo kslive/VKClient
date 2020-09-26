@@ -13,6 +13,7 @@ struct NetworkConstants {
     let scheme = "https"
     let versionAPI = "5.68"
     let scope = "262150"
+    let host = "api.vk.com"
     
     let clientID = "7609562"
 }
