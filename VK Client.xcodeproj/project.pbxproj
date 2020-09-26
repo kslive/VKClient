@@ -179,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				6B978B5C24D17F290073AA20 /* AppDelegate.swift */,
-				6B978B5E24D17F290073AA20 /* SceneDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,7 +197,6 @@
 			children = (
 				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
 				6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */,
-				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -369,6 +367,7 @@
 		6B68F98C24EFA4D600370BE3 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				6B978B5E24D17F290073AA20 /* SceneDelegate.swift */,
 				6B978B6524D17F2A0073AA20 /* Assets.xcassets */,
 				6B978B6A24D17F2A0073AA20 /* Info.plist */,
 			);
@@ -396,12 +395,29 @@
 			children = (
 				6B515470251A017800E60EB7 /* Application */,
 				6B2DD42C24DAC6E200218FED /* Authorization */,
+				6BF6CB97251F1AD300D60DEC /* Loading */,
 				6B51548A251A043A00E60EB7 /* Friends */,
 				6B515495251A055A00E60EB7 /* Groups */,
 				6B37E99624FD377800A371EC /* News */,
 				6B68F98C24EFA4D600370BE3 /* SupportingFiles */,
 			);
 			path = "VK Client";
+			sourceTree = "<group>";
+		};
+		6BF6CB97251F1AD300D60DEC /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				6BF6CB98251F1AE200D60DEC /* Controller */,
+				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		6BF6CB98251F1AE200D60DEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
