@@ -11,6 +11,8 @@ import WebKit
 
 class AuthorizationWebViewController: UIViewController {
     
+    let networkManager = NetworkManager.shared
+    
     @IBOutlet weak var webView: WKWebView! {
         didSet {
             webView.navigationDelegate = self
@@ -20,7 +22,7 @@ class AuthorizationWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let request = Network().fetchRequestAuthorization() else { return }
+        guard let request = networkManager.fetchRequestAuthorization() else { return }
         webView.load(request)
     }
 }
@@ -49,10 +51,10 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
         let userID = params["user_id"]
         
         Session.shared.userId = Int(userID ?? "")
-        Session.shared.token = token!
         
         guard token != nil else { return }
         
+        Session.shared.token = token!
         let loadViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
         self.present(loadViewController, animated: true, completion: nil)
         

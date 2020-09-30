@@ -41,7 +41,7 @@
 		6BDAA80024EFD2EF0013360C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */; };
 		6BF6CB9D251F1DEB00D60DEC /* AuthorizationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CB9C251F1DEB00D60DEC /* AuthorizationWebViewController.swift */; };
 		6BF6CBA4251F334100D60DEC /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CBA3251F334100D60DEC /* NetworkConstants.swift */; };
-		6BF6CBA7251F35E600D60DEC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CBA6251F35E600D60DEC /* Network.swift */; };
+		6BF6CBA7251F35E600D60DEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CBA6251F35E600D60DEC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +81,7 @@
 		6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		6BF6CB9C251F1DEB00D60DEC /* AuthorizationWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationWebViewController.swift; sourceTree = "<group>"; };
 		6BF6CBA3251F334100D60DEC /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
-		6BF6CBA6251F35E600D60DEC /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		6BF6CBA6251F35E600D60DEC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +172,7 @@
 		6B515470251A017800E60EB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				6B764E132525032500208595 /* Model */,
 				6B515474251A01A500E60EB7 /* View */,
 				6B515471251A019100E60EB7 /* Controller */,
 				6B5154A5251A073800E60EB7 /* Network */,
@@ -214,14 +215,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		6B51547D251A036F00E60EB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054DD24D63E4500AAEC22 /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		6B515482251A03B100E60EB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +251,6 @@
 		6B51548A251A043A00E60EB7 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				6B51547D251A036F00E60EB7 /* Model */,
 				6B4054C924D63A9500AAEC22 /* MyFriends */,
 				6B4054C824D63A6B00AAEC22 /* DetailFriend */,
 				6B5781132506015D005F887C /* ImagesFriends */,
@@ -282,18 +274,9 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6B515493251A055100E60EB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		6B515495251A055A00E60EB7 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				6B515493251A055100E60EB7 /* Model */,
 				6B4054CA24D63AA500AAEC22 /* MyGroups */,
 				6B4054CB24D63AC200AAEC22 /* AvailableGroups */,
 			);
@@ -355,7 +338,7 @@
 			children = (
 				6B5154A6251A074F00E60EB7 /* Session.swift */,
 				6BF6CBA3251F334100D60DEC /* NetworkConstants.swift */,
-				6BF6CBA6251F35E600D60DEC /* Network.swift */,
+				6BF6CBA6251F35E600D60DEC /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -377,6 +360,15 @@
 				6B978B6A24D17F2A0073AA20 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6B764E132525032500208595 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054DD24D63E4500AAEC22 /* User.swift */,
+				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6B978B5024D17F290073AA20 = {
@@ -410,20 +402,20 @@
 			path = "VK Client";
 			sourceTree = "<group>";
 		};
+		6BA5C6E3251F518F0027D370 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6BF6CB97251F1AD300D60DEC /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				6BF6CB98251F1AE200D60DEC /* Controller */,
-				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+				6BA5C6E3251F518F0027D370 /* Controller */,
 			);
 			path = Loading;
-			sourceTree = "<group>";
-		};
-		6BF6CB98251F1AE200D60DEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		6BF6CB9B251F1DC400D60DEC /* AuthorizationWeb */ = {
@@ -523,7 +515,7 @@
 				6B4054E024D63E4F00AAEC22 /* Group.swift in Sources */,
 				6B978B5D24D17F290073AA20 /* AppDelegate.swift in Sources */,
 				6BDAA80024EFD2EF0013360C /* ShadowView.swift in Sources */,
-				6BF6CBA7251F35E600D60DEC /* Network.swift in Sources */,
+				6BF6CBA7251F35E600D60DEC /* NetworkManager.swift in Sources */,
 				6BF6CB9D251F1DEB00D60DEC /* AuthorizationWebViewController.swift in Sources */,
 				6BB1F87424F010B400B19E30 /* LikeControl.swift in Sources */,
 				6B5145F3250F5E1C00A752A1 /* CustomInteractiveTransition.swift in Sources */,

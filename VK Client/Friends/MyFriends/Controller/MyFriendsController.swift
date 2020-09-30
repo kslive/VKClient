@@ -11,6 +11,7 @@ import UIKit
 class MyFriendsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
+    let networkManager = NetworkManager.shared
     var filteredUsers = [User]()
     var searchBarIsEmpty: Bool {
         
@@ -45,10 +46,10 @@ class MyFriendsController: UITableViewController {
         tableView.sectionIndexColor = .white
         sortFriend()
         
-        Network().fetchRequestFriends()
-        Network().fetchRequestPhotosUser(for: Session.shared.userId)
-        Network().fetchRequestGroupsUser()
-        Network().fetchRequestSearchGroups(text: "MDK")
+        networkManager.fetchRequestFriends()
+        networkManager.fetchRequestPhotosUser(for: Session.shared.userId)
+        networkManager.fetchRequestGroupsUser()
+        networkManager.fetchRequestSearchGroups(text: "MDK")
     }
     
     // MARK: - Help Function

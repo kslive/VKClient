@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  NetworkManager.swift
 //  VK Client
 //
 //  Created by Eugene Kiselev on 26.09.2020.
@@ -8,14 +8,16 @@
 
 import Foundation
 
-class Network {
+class NetworkManager {
+    
+    static var shared = NetworkManager()
     
     private var urlComponents = URLComponents()
     private let constants = NetworkConstants()
     private let configuration: URLSessionConfiguration!
     private let session: URLSession!
     
-    init() {
+    private init() {
         
         urlComponents.scheme = constants.scheme
         urlComponents.host = constants.host
