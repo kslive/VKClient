@@ -10,14 +10,12 @@ import Foundation
 
 class NetworkManager {
     
-    static var shared = NetworkManager()
-    
     private var urlComponents = URLComponents()
     private let constants = NetworkConstants()
     private let configuration: URLSessionConfiguration!
     private let session: URLSession!
     
-    private init() {
+    init() {
         
         urlComponents.scheme = constants.scheme
         urlComponents.host = constants.host

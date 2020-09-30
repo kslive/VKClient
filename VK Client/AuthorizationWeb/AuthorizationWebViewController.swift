@@ -11,7 +11,7 @@ import WebKit
 
 class AuthorizationWebViewController: UIViewController {
     
-    let networkManager = NetworkManager.shared
+    let networkManager = NetworkManager()
     
     @IBOutlet weak var webView: WKWebView! {
         didSet {

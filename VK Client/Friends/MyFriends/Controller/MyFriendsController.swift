@@ -11,7 +11,7 @@ import UIKit
 class MyFriendsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
-    let networkManager = NetworkManager.shared
+    let networkManager = NetworkManager()
     var filteredUsers = [User]()
     var searchBarIsEmpty: Bool {
         
