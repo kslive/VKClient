@@ -17,7 +17,6 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goToTapBarController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +24,7 @@ class LoadViewController: UIViewController {
         
         animatePointsLoad()
         pathAnimation()
+        goToTapBarController()
     }
     
     func animatePointsLoad() {

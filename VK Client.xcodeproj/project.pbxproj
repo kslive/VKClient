@@ -31,7 +31,6 @@
 		6B57811F25061FA4005F887C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57811E25061FA4005F887C /* PageViewController.swift */; };
 		6B5781212506200D005F887C /* ImagesFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5781202506200D005F887C /* ImagesFriendController.swift */; };
 		6B6445E724EFFEFB007F7505 /* RadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6445E624EFFEFB007F7505 /* RadiusView.swift */; };
-		6B68F98E24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */; };
 		6B978B5D24D17F290073AA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B978B5C24D17F290073AA20 /* AppDelegate.swift */; };
 		6B978B5F24D17F290073AA20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B978B5E24D17F290073AA20 /* SceneDelegate.swift */; };
 		6B978B6424D17F290073AA20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B978B6224D17F290073AA20 /* Main.storyboard */; };
@@ -40,6 +39,9 @@
 		6B978B7324D1874F0073AA20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B978B7224D1874F0073AA20 /* LoginViewController.swift */; };
 		6BB1F87424F010B400B19E30 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB1F87324F010B400B19E30 /* LikeControl.swift */; };
 		6BDAA80024EFD2EF0013360C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */; };
+		6BF6CB9D251F1DEB00D60DEC /* AuthorizationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CB9C251F1DEB00D60DEC /* AuthorizationWebViewController.swift */; };
+		6BF6CBA4251F334100D60DEC /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CBA3251F334100D60DEC /* NetworkConstants.swift */; };
+		6BF6CBA7251F35E600D60DEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF6CBA6251F35E600D60DEC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +69,6 @@
 		6B57811E25061FA4005F887C /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		6B5781202506200D005F887C /* ImagesFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFriendController.swift; sourceTree = "<group>"; };
 		6B6445E624EFFEFB007F7505 /* RadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusView.swift; sourceTree = "<group>"; };
-		6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+KeyboardSettings.swift"; sourceTree = "<group>"; };
 		6B978B5924D17F290073AA20 /* VK Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B978B5C24D17F290073AA20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B978B5E24D17F290073AA20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +79,9 @@
 		6B978B7224D1874F0073AA20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6BB1F87324F010B400B19E30 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		6BDAA7FF24EFD2EF0013360C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		6BF6CB9C251F1DEB00D60DEC /* AuthorizationWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationWebViewController.swift; sourceTree = "<group>"; };
+		6BF6CBA3251F334100D60DEC /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		6BF6CBA6251F35E600D60DEC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +172,10 @@
 		6B515470251A017800E60EB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				6B764E132525032500208595 /* Model */,
 				6B515474251A01A500E60EB7 /* View */,
 				6B515471251A019100E60EB7 /* Controller */,
+				6B5154A5251A073800E60EB7 /* Network */,
 				6B51547A251A02A800E60EB7 /* Service */,
 			);
 			path = Application;
@@ -196,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				6B978B7224D1874F0073AA20 /* LoginViewController.swift */,
-				6B68F98D24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,19 +209,10 @@
 		6B51547A251A02A800E60EB7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6B5154A5251A073800E60EB7 /* Networking */,
 				6B37E99D24FD3FE300A371EC /* CustomUI-Components */,
 				6B5145EB250F585500A752A1 /* CustomTransition */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		6B51547D251A036F00E60EB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054DD24D63E4500AAEC22 /* User.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6B515482251A03B100E60EB7 /* Controller */ = {
@@ -255,7 +251,6 @@
 		6B51548A251A043A00E60EB7 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				6B51547D251A036F00E60EB7 /* Model */,
 				6B4054C924D63A9500AAEC22 /* MyFriends */,
 				6B4054C824D63A6B00AAEC22 /* DetailFriend */,
 				6B5781132506015D005F887C /* ImagesFriends */,
@@ -279,18 +274,9 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6B515493251A055100E60EB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		6B515495251A055A00E60EB7 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				6B515493251A055100E60EB7 /* Model */,
 				6B4054CA24D63AA500AAEC22 /* MyGroups */,
 				6B4054CB24D63AC200AAEC22 /* AvailableGroups */,
 			);
@@ -347,12 +333,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6B5154A5251A073800E60EB7 /* Networking */ = {
+		6B5154A5251A073800E60EB7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				6B5154A6251A074F00E60EB7 /* Session.swift */,
+				6BF6CBA3251F334100D60DEC /* NetworkConstants.swift */,
+				6BF6CBA6251F35E600D60DEC /* NetworkManager.swift */,
 			);
-			path = Networking;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6B5781132506015D005F887C /* ImagesFriends */ = {
@@ -372,6 +360,15 @@
 				6B978B6A24D17F2A0073AA20 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6B764E132525032500208595 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B4054DD24D63E4500AAEC22 /* User.swift */,
+				6B4054DF24D63E4F00AAEC22 /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6B978B5024D17F290073AA20 = {
@@ -395,6 +392,7 @@
 			children = (
 				6B515470251A017800E60EB7 /* Application */,
 				6B2DD42C24DAC6E200218FED /* Authorization */,
+				6BF6CB9B251F1DC400D60DEC /* AuthorizationWeb */,
 				6BF6CB97251F1AD300D60DEC /* Loading */,
 				6B51548A251A043A00E60EB7 /* Friends */,
 				6B515495251A055A00E60EB7 /* Groups */,
@@ -404,20 +402,28 @@
 			path = "VK Client";
 			sourceTree = "<group>";
 		};
+		6BA5C6E3251F518F0027D370 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6BF6CB97251F1AD300D60DEC /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				6BF6CB98251F1AE200D60DEC /* Controller */,
-				6B0772CE250223AA00BB9B8A /* LoadViewController.swift */,
+				6BA5C6E3251F518F0027D370 /* Controller */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
 		};
-		6BF6CB98251F1AE200D60DEC /* Controller */ = {
+		6BF6CB9B251F1DC400D60DEC /* AuthorizationWeb */ = {
 			isa = PBXGroup;
 			children = (
+				6BF6CB9C251F1DEB00D60DEC /* AuthorizationWebViewController.swift */,
 			);
-			path = Controller;
+			path = AuthorizationWeb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,8 +500,8 @@
 				6B4054CF24D63B2900AAEC22 /* MyFriendsCell.swift in Sources */,
 				6B0772CF250223AA00BB9B8A /* LoadViewController.swift in Sources */,
 				6B4054D924D63C0F00AAEC22 /* AvailableGroupsController.swift in Sources */,
+				6BF6CBA4251F334100D60DEC /* NetworkConstants.swift in Sources */,
 				6B5781212506200D005F887C /* ImagesFriendController.swift in Sources */,
-				6B68F98E24EFA6B600370BE3 /* LoginViewController+KeyboardSettings.swift in Sources */,
 				6B37E99824FD379300A371EC /* NewsViewController.swift in Sources */,
 				6B37E99A24FD390600A371EC /* NewsViewController+UITableViewController.swift in Sources */,
 				6B978B7324D1874F0073AA20 /* LoginViewController.swift in Sources */,
@@ -509,6 +515,8 @@
 				6B4054E024D63E4F00AAEC22 /* Group.swift in Sources */,
 				6B978B5D24D17F290073AA20 /* AppDelegate.swift in Sources */,
 				6BDAA80024EFD2EF0013360C /* ShadowView.swift in Sources */,
+				6BF6CBA7251F35E600D60DEC /* NetworkManager.swift in Sources */,
+				6BF6CB9D251F1DEB00D60DEC /* AuthorizationWebViewController.swift in Sources */,
 				6BB1F87424F010B400B19E30 /* LikeControl.swift in Sources */,
 				6B5145F3250F5E1C00A752A1 /* CustomInteractiveTransition.swift in Sources */,
 				6B5154A7251A074F00E60EB7 /* Session.swift in Sources */,
