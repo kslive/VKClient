@@ -77,7 +77,7 @@ class NetworkManager {
     }
     // MARK: Photos User
     
-    func fetchRequestPhotosUser(for ownerID: Int?) {
+    func fetchRequestPhotosUser(for ownerID: Int?, completion: @escaping ([Photo]) -> ()) {
         
         urlComponents.path = "/method/photos.getAll"
         
@@ -97,9 +97,12 @@ class NetworkManager {
             
             do {
                 
-                let photo = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                let decoder = JSONDecoder()
                 
-                print(photo)
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let photo = try decoder.decode(Response<Photo>.self, from: data).response?.items else { return }
+                
+                completion(photo)
             } catch {
                 print(error.localizedDescription)
             }

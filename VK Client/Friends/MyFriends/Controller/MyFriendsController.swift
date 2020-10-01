@@ -165,7 +165,7 @@ class MyFriendsController: UITableViewController {
 
                     detailFriendController?.titleItem = friends.returnFullName()
                     detailFriendController?.friendsImage.removeAll()
-                    detailFriendController?.friendsImage.append(friends)
+//                    detailFriendController?.friendsImage.append(friends)
                 } else {
                     
                     let friendKey = friendsSection[indexPath.section]
@@ -176,7 +176,7 @@ class MyFriendsController: UITableViewController {
 
                         detailFriendController?.titleItem = friendsValue.returnFullName()
                         detailFriendController?.friendsImage.removeAll()
-                        detailFriendController?.friendsImage.append(friendsValue)
+//                        detailFriendController?.friendsImage.append(friendsValue)
                     }
                 }
             }

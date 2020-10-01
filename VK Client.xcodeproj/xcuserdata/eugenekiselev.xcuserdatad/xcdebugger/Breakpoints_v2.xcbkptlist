@@ -346,5 +346,128 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "friendsImage"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - f3fd6e2a9572e6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.friendsImage.getter : Swift.Array&lt;VK_Client.Photo&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - fe403852274916a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.friendsImage.setter : Swift.Array&lt;VK_Client.Photo&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - ab0ed2068fa20cfe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.friendsImage.modify : Swift.Array&lt;VK_Client.Photo&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - 58da6872fa8fcce1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.friendsImage.modify : Swift.Array&lt;VK_Client.Photo&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - 4dc21e61b08f9c8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; VK_Client.DetailFriendController"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - ffc041ad0ad63734"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; VK_Client.DetailFriendController"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "3E0ACE77-6063-4A00-A7E9-3622A6D0667F - 9d61bebbdd7406e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.DetailFriendController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;VK_Client.DetailFriendController&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

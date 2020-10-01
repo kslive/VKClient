@@ -735,7 +735,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hjg-Zp-Pmy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mtm-uj-DBf" firstAttribute="top" secondItem="Hjg-Zp-Pmy" secondAttribute="top" id="aCu-La-kEk"/>
                             <constraint firstItem="mtm-uj-DBf" firstAttribute="trailing" secondItem="Hjg-Zp-Pmy" secondAttribute="trailing" id="mW9-7p-AcN"/>
@@ -787,6 +787,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="fH8-lt-LTP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -808,9 +809,6 @@
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <image name="Юрий Гагарин" width="1100" height="535"/>
         <image name="Ян Янов" width="1600" height="900"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
