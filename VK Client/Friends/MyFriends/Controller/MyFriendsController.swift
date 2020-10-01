@@ -24,18 +24,7 @@ class MyFriendsController: UITableViewController {
         
         return searchController.isActive && !searchBarIsEmpty
     }
-    var friends = [User(nameSurnameFriend: "Иванов Иван", imageFriend: ["Иван Иванов", "Иванов Иван"]),
-                   User(nameSurnameFriend: "Сергиев Сергей", imageFriend: ["Сергей Сергиев", "Сергиев Сергей"]),
-                   User(nameSurnameFriend: "Дмитров Дмитрий", imageFriend: ["Дмитрий Дмитров", "Дмитров Дмитрий"]),
-                   User(nameSurnameFriend: "Лукашенко Александр", imageFriend: ["Александр Лукашенко", "Лукашенко Александр"]),
-                   User(nameSurnameFriend: "Путин Владимир", imageFriend: ["Владимир Путин", "Путин Владимир"]),
-                   User(nameSurnameFriend: "Иванов Евгений", imageFriend: ["Евгений Иванов", "Иванов Евгений"]),
-                   User(nameSurnameFriend: "Рыбов Никита", imageFriend: ["Никита Рыбов", "Рыбов Никита"]),
-                   User(nameSurnameFriend: "Олегов Олег", imageFriend: ["Олег Олегов", "Олегов Олег"]),
-                   User(nameSurnameFriend: "Эдуардов Эдуард", imageFriend: ["Эдуард Эдуардов", "Эдуардов Эдуард"]),
-                   User(nameSurnameFriend: "Гагарин Юрий", imageFriend: ["Юрий Гагарин", "Гагарин Юрий"]),
-                   User(nameSurnameFriend: "Янов Ян", imageFriend: ["Ян Янов", "Янов Ян"]),
-                   User(nameSurnameFriend: "Алексеев Алексей", imageFriend: ["Алексей Алексеев", "Алексеев Алексей"])]
+    var friends = [User]()
     var friendsSection = [String]()
     var friendsDictionary = [String: [User]]()
 
@@ -45,11 +34,6 @@ class MyFriendsController: UITableViewController {
         setupSearchController()
         tableView.sectionIndexColor = .white
         sortFriend()
-        
-        networkManager.fetchRequestFriends()
-        networkManager.fetchRequestPhotosUser(for: Session.shared.userId)
-        networkManager.fetchRequestGroupsUser()
-        networkManager.fetchRequestSearchGroups(text: "MDK")
     }
     
     // MARK: - Help Function

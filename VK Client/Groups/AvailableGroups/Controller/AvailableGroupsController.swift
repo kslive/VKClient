@@ -11,12 +11,7 @@ import UIKit
 class AvailableGroupsController: UITableViewController {
     
 // Дефолтный массив:
-    var allGroups = [Group(nameGroup: "New Rap News", imageGroup: "New Rap News"),
-                     Group(nameGroup: "Лентач", imageGroup: "Лентач"),
-                     Group(nameGroup: "Mac OS", imageGroup: "Mac OS"),
-                     Group(nameGroup: "New Rap", imageGroup: "New Rap"),
-                     Group(nameGroup: "Рифмы и Панчи", imageGroup: "Рифмы и Панчи"),
-                     Group(nameGroup: "Hardcore Fighting", imageGroup: "Hardcore Fighting")]
+    var allGroups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
