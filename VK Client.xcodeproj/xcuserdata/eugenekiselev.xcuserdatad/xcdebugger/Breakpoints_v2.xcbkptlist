@@ -223,5 +223,128 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "AvailableGroupsController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - fb13d12ede15bf18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.allGroups.getter : Swift.Array&lt;VK_Client.Group&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - f9fea796a03fef0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.allGroups.setter : Swift.Array&lt;VK_Client.Group&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - 92cc0d3ac8c6e12e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.allGroups.modify : Swift.Array&lt;VK_Client.Group&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - f42bcd95e09befc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.allGroups.modify : Swift.Array&lt;VK_Client.Group&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - 5291090b946e54b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.init(style: __C.UITableViewStyle) -&gt; VK_Client.AvailableGroupsController"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "253">
+               </Location>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - 21cd4e2d605eab64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; VK_Client.AvailableGroupsController"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "354">
+               </Location>
+               <Location
+                  uuid = "4FF8AFF7-EFAB-4EC8-A83D-5618C0E1ECA5 - 5cc9cdf17bae4d80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_Client.AvailableGroupsController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;VK_Client.AvailableGroupsController&gt;"
+                  moduleName = "VK Client"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenekiselev/Desktop/GeekBrains/App/VKClient/VK%20Client/Groups/AvailableGroups/Controller/AvailableGroupsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "268">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
