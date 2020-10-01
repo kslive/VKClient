@@ -25,6 +25,6 @@ class DetailFriendCell: UICollectionViewCell {
     
     func configure(for model: User) {
         
-        detailFriendImage.image = UIImage(named: model.imageFriend.first!)
+//        detailFriendImage.image = UIImage(named: model.imageFriend.first!)
     }
 }

@@ -40,19 +40,19 @@ class MyGroupsController: UITableViewController {
             guard let availableGroups = segue.source as? AvailableGroupsController else { return }
             if let indexPath = availableGroups.tableView.indexPathForSelectedRow {
                 let group = availableGroups.allGroups[indexPath.row]
-                
-                if !myGroups.contains(where: {$0.nameGroup == group.nameGroup}) {
-                    myGroups.append(group)
-                    tableView.reloadData()
-                } else {
-                    
-                    let alert = UIAlertController(title: "Choose another group",
-                                                  message: "This group already exists on your list",
-                                                  preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .cancel)
-                    alert.addAction(alertAction)
-                    present(alert, animated: true)
-                }
+//
+//                if !myGroups.contains(where: {$0.nameGroup == group.nameGroup}) {
+//                    myGroups.append(group)
+//                    tableView.reloadData()
+//                } else {
+//
+//                    let alert = UIAlertController(title: "Choose another group",
+//                                                  message: "This group already exists on your list",
+//                                                  preferredStyle: .alert)
+//                    let alertAction = UIAlertAction(title: "OK", style: .cancel)
+//                    alert.addAction(alertAction)
+//                    present(alert, animated: true)
+//                }
             }
         }
     }
@@ -95,7 +95,7 @@ class MyGroupsController: UITableViewController {
             if isFiltering {
                 
                 let filteredGroup = filteredGroups.remove(at: indexPath.row)
-                myGroups.removeAll(where: {$0.nameGroup == filteredGroup.nameGroup})
+//                myGroups.removeAll(where: {$0.nameGroup == filteredGroup.nameGroup})
             } else {
                 
                 myGroups.remove(at: indexPath.row)

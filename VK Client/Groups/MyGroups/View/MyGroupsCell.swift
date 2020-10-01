@@ -38,7 +38,7 @@ class MyGroupsCell: UITableViewCell {
     
     func configure(for model: Group) {
         
-        myGroupNameLabel.text = model.nameGroup
-        myGroupImage.image = UIImage(named: model.imageGroup)
+//        myGroupNameLabel.text = model.nameGroup
+//        myGroupImage.image = UIImage(named: model.imageGroup)
     }
 }

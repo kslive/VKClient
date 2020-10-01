@@ -38,7 +38,20 @@ class MyFriendsCell: UITableViewCell {
     
     func configure(for model: User) {
 
-        nameSurnameLabel.text = model.nameSurnameFriend
-        friendImage.image = UIImage(named: model.imageFriend.first!)
+        guard let name = model.returnFullName() else { return }
+        
+        nameSurnameLabel.text = name
+        
+        DispatchQueue.global().async {
+            
+            guard let url = model.photo100,
+                  let imageURL = URL(string: url),
+                  let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                self?.friendImage.image = UIImage(data: imageData)
+            }
+        }
     }
 }

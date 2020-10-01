@@ -37,7 +37,7 @@ class AvailableGroupsCell: UITableViewCell {
     }
     
     func configure(for model: Group) {
-        groupNameLabel.text = model.nameGroup
-        groupImage.image = UIImage(named: model.imageGroup)
+//        groupNameLabel.text = model.nameGroup
+//        groupImage.image = UIImage(named: model.imageGroup)
     }
 }

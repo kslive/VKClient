@@ -47,7 +47,7 @@ class PageViewController: UIPageViewController {
     private func setupSliderView() {
         
         for (_,imageName) in imagesUser.enumerated() {
-            imagesName.append(contentsOf: imageName.imageFriend)
+//            imagesName.append(contentsOf: imageName.imageFriend)
         }
     }
     

@@ -28,10 +28,10 @@ class NewsCell: UITableViewCell {
     
     func configure(for model: User) {
         
-        nameGroup.text = model.nameSurnameFriend
-        imageGroup.image = UIImage(named: model.imageFriend.last!)
-        dateGroup.text = "\(Int.random(in: 1...31)).\(Int.random(in: 1...12)).\(Int.random(in: 2018...2020))"
-        imageFromGroup.image = UIImage(named: model.imageFriend.first!)
-        textFromGroup.text = "\(model.nameSurnameFriend) опубликовал новое фото!"
+//        nameGroup.text = model.nameSurnameFriend
+//        imageGroup.image = UIImage(named: model.imageFriend.last!)
+//        dateGroup.text = "\(Int.random(in: 1...31)).\(Int.random(in: 1...12)).\(Int.random(in: 2018...2020))"
+//        imageFromGroup.image = UIImage(named: model.imageFriend.first!)
+//        textFromGroup.text = "\(model.nameSurnameFriend) опубликовал новое фото!"
     }
 }

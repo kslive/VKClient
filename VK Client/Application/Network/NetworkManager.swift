@@ -97,8 +97,9 @@ class NetworkManager {
             
             do {
                 
-                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                let photo = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 
+                print(photo)
             } catch {
                 print(error.localizedDescription)
             }
@@ -156,9 +157,9 @@ class NetworkManager {
                 let decoder = JSONDecoder()
                 
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let groups = try decoder.decode(Response<Group>.self, from: data).response?.items else { return }
+                guard let searchGroups = try decoder.decode(Response<Group>.self, from: data).response?.items else { return }
                 
-                completion(groups)
+                completion(searchGroups)
             } catch {
                 print(error.localizedDescription)
             }

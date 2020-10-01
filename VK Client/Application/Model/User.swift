@@ -14,5 +14,10 @@ class User: Decodable {
     let firstName: String?
     let lastName: String?
     let photo100: String?
+    
+    func returnFullName() -> String? {
+        
+        return "\(firstName ?? "") \(lastName ?? "")"
+    }
 }
 
