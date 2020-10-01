@@ -14,7 +14,7 @@ class MyFriendsController: UITableViewController {
     let networkManager = NetworkManager()
     var friends = [User]()
     var friendsSection = [String]()
-    var friendsDictionary = [String: [User]]()
+    lazy var friendsDictionary = [String: [User]]()
     var filteredUsers = [User]()
     var searchBarIsEmpty: Bool {
         
