@@ -105,6 +105,7 @@ class NetworkManager {
             }
         }.resume()
     }
+    
     // MARK: Groups User
     
     func fetchRequestGroupsUser(completion: @escaping ([Group]) -> ()) {

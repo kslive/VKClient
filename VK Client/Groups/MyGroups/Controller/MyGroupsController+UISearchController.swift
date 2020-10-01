@@ -33,9 +33,11 @@ extension MyGroupsController: UISearchResultsUpdating {
     
     func filterContentForSearchText(_ searchText: String) {
         
-//        filteredGroups = myGroups.filter{ (group: Group) -> Bool in
-//            return group.nameGroup.contains(searchText)
-//        }
+        filteredGroups = myGroups.filter{ (group: Group) -> Bool in
+            
+            guard let name = group.name else { return false }
+            return name.contains(searchText)
+        }
         
         tableView.reloadData()
     }
