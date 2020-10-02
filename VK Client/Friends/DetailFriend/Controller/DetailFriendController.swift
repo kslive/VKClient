@@ -62,8 +62,8 @@ class DetailFriendController: UICollectionViewController {
         
         let pageViewController = segue.destination as? PageViewController
         
-        pageViewController?.titleItem = titleItem
         pageViewController?.ownerID = ownerID
+        pageViewController?.titleItem = titleItem
     }
 
     // MARK: UICollectionViewDataSource

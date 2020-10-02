@@ -11,23 +11,17 @@ import UIKit
 class PageViewController: UIPageViewController {
     
     let networkManager = NetworkManager()
-    var imagesUser = [Photo]()
-    var images = [Sizes]()
     var titleItem: String?
     var ownerID: Int?
+    var imagesUser = [Photo]()
+    var imagesSize = [Sizes]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
         
-        if let imagesFriendController = showViewControllerAtIndex(0) {
-            setViewControllers([imagesFriendController],
-                               direction: .forward,
-                               animated: true)
-            
-        }
-        
+        fetchRequestPhotosUser(for: ownerID)
         setupNavigationBar()
     }
     
@@ -39,6 +33,7 @@ class PageViewController: UIPageViewController {
             
             DispatchQueue.main.async {
                 
+                self?.setupView()
                 self?.view.reloadInputViews()
             }
             
@@ -46,36 +41,46 @@ class PageViewController: UIPageViewController {
         }
     }
     
-    private func setupSliderView() {
+    func setupSliderView() {
         
         for imageName in imagesUser {
             
             guard let sizes = imageName.sizes?.last else { return }
             
-            images.append(sizes)
+            imagesSize.append(sizes)
+        }
+    }
+    
+    func setupView() {
+        
+        if let imagesFriendController = showViewControllerAtIndex(0) {
+            setViewControllers([imagesFriendController],
+                               direction: .forward,
+                               animated: true)
             
         }
     }
     
     func showViewControllerAtIndex(_ index: Int) -> ImagesFriendController? {
                 
-        guard index >= 0, index < images.count,
-              let imagesFriendController = storyboard?.instantiateViewController(withIdentifier: "ImagesFriendController") as? ImagesFriendController
-        else { return nil }
+        guard let imagesFriendController = storyboard?.instantiateViewController(withIdentifier: "ImagesFriendController") as? ImagesFriendController else { return nil }
+        
+        print("COUNT \(imagesSize.count)")
+        guard index >= 0, index < imagesSize.count else { return nil }
         
         DispatchQueue.global().async { [weak self] in
             
-            guard let url = self?.images[index].src,
+            guard let url = self?.imagesSize[index].src,
                   let imageURL = URL(string: url),
                   let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
                 
-                imagesFriendController.images = UIImage(data: imageData)
+                imagesFriendController.imagesFriend.image = UIImage(data: imageData)
             }
         }
         imagesFriendController.currentPage = index
-        imagesFriendController.numberOfPages = images.count
+        imagesFriendController.numberOfPages = imagesSize.count
         
         return imagesFriendController
     }
@@ -101,7 +106,6 @@ extension PageViewController: UIPageViewControllerDataSource {
         var pageNumber = (viewController as! ImagesFriendController).currentPage
         pageNumber -= 1
         
-        fetchRequestPhotosUser(for: ownerID)
         return showViewControllerAtIndex(pageNumber)
     }
     
@@ -111,7 +115,6 @@ extension PageViewController: UIPageViewControllerDataSource {
         var pageNumber = (viewController as! ImagesFriendController).currentPage
         pageNumber += 1
         
-        fetchRequestPhotosUser(for: ownerID)
         return showViewControllerAtIndex(pageNumber)
     }
 }

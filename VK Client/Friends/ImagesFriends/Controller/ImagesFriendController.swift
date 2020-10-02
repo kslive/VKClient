@@ -10,7 +10,6 @@ import UIKit
 
 class ImagesFriendController: UIViewController {
     
-    var images: UIImage?
     var currentPage = 0
     var numberOfPages = 0
 
@@ -20,10 +19,10 @@ class ImagesFriendController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imagesFriend.image = images
+                
         pageControl.currentPage = currentPage
         pageControl.numberOfPages = numberOfPages
+        
         
         self.tabBarController?.tabBar.isHidden = true
         
