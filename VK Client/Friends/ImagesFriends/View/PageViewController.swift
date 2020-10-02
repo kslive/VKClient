@@ -62,11 +62,9 @@ class PageViewController: UIPageViewController {
     }
     
     func showViewControllerAtIndex(_ index: Int) -> ImagesFriendController? {
-                
-        guard let imagesFriendController = storyboard?.instantiateViewController(withIdentifier: "ImagesFriendController") as? ImagesFriendController else { return nil }
-        
-        print("COUNT \(imagesSize.count)")
-        guard index >= 0, index < imagesSize.count else { return nil }
+                        
+        guard index >= 0, index < imagesSize.count,
+              let imagesFriendController = storyboard?.instantiateViewController(withIdentifier: "ImagesFriendController") as? ImagesFriendController else { return nil }
         
         DispatchQueue.global().async { [weak self] in
             

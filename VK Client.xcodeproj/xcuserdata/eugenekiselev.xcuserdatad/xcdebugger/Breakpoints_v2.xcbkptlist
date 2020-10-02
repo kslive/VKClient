@@ -805,8 +805,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "showViewControllerAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -821,8 +821,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "showViewControllerAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -840,22 +840,6 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "configure(for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "245553D2-43E8-43D8-ABD0-7D109DF3E263"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "showViewControllerAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1085,8 +1069,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "pageViewController(_:viewControllerAfter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1101,8 +1085,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "showViewControllerAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1117,8 +1101,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "showViewControllerAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1133,8 +1117,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "showViewControllerAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
