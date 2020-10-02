@@ -11,6 +11,6 @@ import Foundation
 class Photo: Decodable {
     
     var id: Int?
-    var ownerID: Int?
+    var ownerId: Int?
     var sizes: [Sizes]?
 }

@@ -13,15 +13,10 @@ extension MyFriendsController: UISearchResultsUpdating {
     
     func setupSearchController() {
     
-// Получаем инфо об изменении текста:
         searchController.searchResultsUpdater = self
-// Запрет взаимодействия с контентом при вводе:
         searchController.obscuresBackgroundDuringPresentation = false
-// Название строки поиска:
         searchController.searchBar.placeholder = "Search Friends"
-// Расположение:
         navigationItem.searchController = searchController
-// Строка поиска при переходе:
         definesPresentationContext = true
     }
     

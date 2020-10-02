@@ -10,21 +10,42 @@ import UIKit
 
 class DetailFriendCell: UICollectionViewCell {
     
-    @IBOutlet weak var detailFriendImage: UIImageView!
-    @IBOutlet weak var imageSliderButton: UIButton!
+    @IBOutlet weak var shadowView: ShadowView!
+    @IBOutlet weak var detailFriendImage: UIImageView! {
+        didSet {
+            
+            detailFriendImage.layer.cornerRadius = detailFriendImage.frame.size.height / 2
+            detailFriendImage.contentMode = .scaleAspectFill
+        }
+    }
+    @IBOutlet weak var imageSliderButton: UIButton! {
+        didSet {
+            
+            imageSliderButton.layer.cornerRadius = detailFriendImage.frame.size.height / 2
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        detailFriendImage.contentMode = .scaleAspectFill
-        imageSliderButton.layer.cornerRadius = detailFriendImage.frame.size.height / 2
+        shadowView.isHidden = true
     }
     
     @IBAction func openedImageSlider(_ sender: UIButton) {
     }
     
-    func configure(for model: User) {
+    func configure(for model: Sizes) {
         
-//        detailFriendImage.image = UIImage(named: model.imageFriend.first!)
+        DispatchQueue.global().async { 
+            
+            guard let url = model.src,
+                  let imageURL = URL(string: url),
+                  let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                self?.detailFriendImage.image = UIImage(data: imageData)
+            }
+        }
     }
 }

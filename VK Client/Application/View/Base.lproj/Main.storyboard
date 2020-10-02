@@ -427,6 +427,7 @@
                                 <connections>
                                     <outlet property="detailFriendImage" destination="MeH-pI-gYH" id="3kq-iT-njM"/>
                                     <outlet property="imageSliderButton" destination="8ga-Pc-FoX" id="xbP-AO-DBH"/>
+                                    <outlet property="shadowView" destination="yaX-Dg-lRX" id="6hK-ca-RRg"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

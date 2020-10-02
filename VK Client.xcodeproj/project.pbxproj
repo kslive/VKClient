@@ -378,8 +378,8 @@
 			children = (
 				6B6CDC8325255F46006DCDC5 /* User.swift */,
 				6B14445725261EBC009D6EC6 /* Photo.swift */,
-				6B14445A25261FE3009D6EC6 /* Sizes.swift */,
 				6B6CDC8525255F46006DCDC5 /* Group.swift */,
+				6B14445A25261FE3009D6EC6 /* Sizes.swift */,
 				6B6CDC8225255F46006DCDC5 /* Items.swift */,
 				6B6CDC8425255F46006DCDC5 /* Response.swift */,
 			);

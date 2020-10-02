@@ -125,8 +125,8 @@ class LoadViewController: UIViewController {
 // Откладываем на 3 секунды:
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "TapBar") as UIViewController
-            self.present(vc, animated: true, completion: nil)
+            let TapBarController = self.storyboard!.instantiateViewController(withIdentifier: "TapBar") as UIViewController
+            self.present(TapBarController, animated: true, completion: nil)
         }
     }
 }

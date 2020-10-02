@@ -11,5 +11,5 @@ import Foundation
 class Sizes: Decodable {
     
     var type: String?
-    var url: String?
+    var src: String?
 }

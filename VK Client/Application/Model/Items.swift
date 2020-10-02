@@ -10,5 +10,5 @@ import Foundation
 
 class Items<T: Decodable>: Decodable {
     
-    let items: [T]?
+    let items: [T]
 }

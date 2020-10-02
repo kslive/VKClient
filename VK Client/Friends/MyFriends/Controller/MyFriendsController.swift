@@ -51,7 +51,6 @@ class MyFriendsController: UITableViewController {
             }
             self?.sortFriend()
         }
-        
     }
     
     private func sortFriend() {
@@ -164,8 +163,7 @@ class MyFriendsController: UITableViewController {
                     let friends = filteredUsers[indexPath.row]
 
                     detailFriendController?.titleItem = friends.returnFullName()
-                    detailFriendController?.friendsImage.removeAll()
-//                    detailFriendController?.friendsImage.append(friends)
+                    detailFriendController?.ownerID = friends.id
                 } else {
                     
                     let friendKey = friendsSection[indexPath.section]
@@ -175,8 +173,7 @@ class MyFriendsController: UITableViewController {
                         let friendsValue = friendValue[indexPath.row]
 
                         detailFriendController?.titleItem = friendsValue.returnFullName()
-                        detailFriendController?.friendsImage.removeAll()
-//                        detailFriendController?.friendsImage.append(friendsValue)
+                        detailFriendController?.ownerID = friendsValue.id
                     }
                 }
             }
