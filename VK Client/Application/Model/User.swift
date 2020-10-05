@@ -8,9 +8,16 @@
 
 import Foundation
 
-struct User {
+class User: Decodable {
     
-    var nameSurnameFriend: String
-    var imageFriend: [String]
+    let id: Int?
+    let firstName: String?
+    let lastName: String?
+    let photo100: String?
+    
+    func returnFullName() -> String? {
+        
+        return "\(firstName ?? "") \(lastName ?? "")"
+    }
 }
 

@@ -38,7 +38,20 @@ class MyGroupsCell: UITableViewCell {
     
     func configure(for model: Group) {
         
-        myGroupNameLabel.text = model.nameGroup
-        myGroupImage.image = UIImage(named: model.imageGroup)
+        guard let name = model.name else { return }
+        
+        myGroupNameLabel.text = name
+        
+        DispatchQueue.global().async {
+            
+            guard let url = model.photo50,
+                  let imageURL = URL(string: url),
+                  let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                self?.myGroupImage.image = UIImage(data: imageData)
+            }
+        }
     }
 }

@@ -10,16 +10,43 @@ import UIKit
 
 class AvailableGroupsController: UITableViewController {
     
-// Дефолтный массив:
-    var allGroups = [Group(nameGroup: "New Rap News", imageGroup: "New Rap News"),
-                     Group(nameGroup: "Лентач", imageGroup: "Лентач"),
-                     Group(nameGroup: "Mac OS", imageGroup: "Mac OS"),
-                     Group(nameGroup: "New Rap", imageGroup: "New Rap"),
-                     Group(nameGroup: "Рифмы и Панчи", imageGroup: "Рифмы и Панчи"),
-                     Group(nameGroup: "Hardcore Fighting", imageGroup: "Hardcore Fighting")]
+    let searchController = UISearchController(searchResultsController: nil)
+    let networkManager = NetworkManager()
+    var allGroups = [Group]()
+    var searchBarIsEmpty: Bool {
+        
+        guard let text = searchController.searchBar.text else { return false }
+        
+        return text.isEmpty
+    }
+    var isFiltering: Bool {
+        
+        return searchController.isActive && !searchBarIsEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSearchController()
+    }
+    
+    // MARK: Help Function
+    
+    func fetchRequestSearchGroups(text: String?) {
+        
+        networkManager.fetchRequestSearchGroups(text: text) { [weak self] groups in
+                
+                DispatchQueue.main.async {
+                    
+                    if self!.isFiltering {
+                        
+                        self?.allGroups = groups
+                    }
+                    
+                    self?.tableView.reloadData()
+                }
+            
+        }
     }
 
     // MARK: - Table view data source
@@ -29,15 +56,24 @@ class AvailableGroupsController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allGroups.count
+        
+        if isFiltering {
+            return allGroups.count
+        }
+        
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableGroupsCell", for: indexPath) as! AvailableGroupsCell
+        
         let allGroup = allGroups[indexPath.row]
         
-        cell.configure(for: allGroup)
+        if isFiltering {
+            
+            cell.configure(for: allGroup)
+        }
         
         return cell
     }

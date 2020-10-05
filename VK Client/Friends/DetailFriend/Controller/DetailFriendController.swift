@@ -10,13 +10,16 @@ import UIKit
 
 class DetailFriendController: UICollectionViewController {
     
-    var friendsImage = [User]()
+    let networkManager = NetworkManager()
+    var friendsImage: Photo?
     var titleItem: String?
+    var ownerID: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
+        fetchRequestPhotosUser(for: ownerID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +29,19 @@ class DetailFriendController: UICollectionViewController {
     }
     
     // MARK: Help Function
+    
+    func fetchRequestPhotosUser(for id: Int?) {
+        
+        networkManager.fetchRequestPhotosUser(for: id) { [weak self] photos in
+                  
+            self?.friendsImage = photos.last
+
+            DispatchQueue.main.async {
+                
+                self?.collectionView.reloadData()
+            }
+        }
+    }
     
     private func setupNavigationBar() {
         
@@ -46,8 +62,8 @@ class DetailFriendController: UICollectionViewController {
         
         let pageViewController = segue.destination as? PageViewController
         
+        pageViewController?.ownerID = ownerID
         pageViewController?.titleItem = titleItem
-        pageViewController?.imagesUser = friendsImage
     }
 
     // MARK: UICollectionViewDataSource
@@ -58,14 +74,15 @@ class DetailFriendController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friendsImage.count
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailFriendCell", for: indexPath) as! DetailFriendCell
-        let friendImage = friendsImage[indexPath.row]
         
+        guard let friendImage = friendsImage?.sizes?.last else { return cell }
+                    
         cell.configure(for: friendImage)
         
         return cell
