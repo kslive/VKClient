@@ -23,7 +23,6 @@ class ImagesFriendController: UIViewController {
         pageControl.currentPage = currentPage
         pageControl.numberOfPages = numberOfPages
         
-        
         self.tabBarController?.tabBar.isHidden = true
         
         scrollView.minimumZoomScale = 1.0

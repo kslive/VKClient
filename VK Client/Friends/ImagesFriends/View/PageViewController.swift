@@ -75,6 +75,7 @@ class PageViewController: UIPageViewController {
             DispatchQueue.main.async {
                 
                 imagesFriendController.imagesFriend.image = UIImage(data: imageData)
+                imagesFriendController.view.reloadInputViews()
             }
         }
         imagesFriendController.currentPage = index
