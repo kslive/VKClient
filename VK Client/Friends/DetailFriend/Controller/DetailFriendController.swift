@@ -81,7 +81,7 @@ class DetailFriendController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailFriendCell", for: indexPath) as! DetailFriendCell
         
-        guard let friendImage = friendsImage?.sizes?.last else { return cell }
+        guard let friendImage = friendsImage?.sizes.last else { return cell }
                     
         cell.configure(for: friendImage)
         

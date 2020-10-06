@@ -45,7 +45,7 @@ class PageViewController: UIPageViewController {
         
         for imageName in imagesUser {
             
-            guard let sizes = imageName.sizes?.last else { return }
+            guard let sizes = imageName.sizes.last else { return }
             
             imagesSize.append(sizes)
         }
