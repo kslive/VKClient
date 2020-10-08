@@ -34,7 +34,6 @@ class PageViewController: UIPageViewController {
             DispatchQueue.main.async {
                 
                 self?.setupView()
-                self?.view.reloadInputViews()
             }
             
             self?.setupSliderView()
