@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Photo: Decodable {
+class Photo: Object, Decodable {
     
-    var id: Int?
-    var ownerId: Int?
-    var sizes: [Sizes]?
+    @objc dynamic var id = 0
+    @objc dynamic var ownerId = 0
+    var sizes = List<Sizes>()
 }

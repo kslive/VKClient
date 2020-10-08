@@ -96,8 +96,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "MyFriendsController"
-            landmarkType = "3">
+            landmarkName = "networkManager"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "F778ECFC-743E-4F04-9AFA-D99C80BD8EA7 - e4a5b4aadfe44f57"
@@ -759,8 +759,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "DetailFriendController"
-            landmarkType = "3">
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1069,8 +1069,8 @@
             filePath = "VK Client/Friends/ImagesFriends/View/PageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "pageViewController(_:viewControllerAfter:)"
             landmarkType = "7">
          </BreakpointContent>

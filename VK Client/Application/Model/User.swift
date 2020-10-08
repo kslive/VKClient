@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 
 class User: Decodable {
     
-    let id: Int?
-    let firstName: String?
-    let lastName: String?
-    let photo100: String?
+    @objc dynamic var id = 0
+    @objc dynamic var firstName: String?
+    @objc dynamic var lastName: String?
+    @objc dynamic var photo100: String?
     
     func returnFullName() -> String? {
         

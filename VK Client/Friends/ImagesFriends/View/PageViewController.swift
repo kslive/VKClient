@@ -34,7 +34,6 @@ class PageViewController: UIPageViewController {
             DispatchQueue.main.async {
                 
                 self?.setupView()
-                self?.view.reloadInputViews()
             }
             
             self?.setupSliderView()
@@ -45,7 +44,7 @@ class PageViewController: UIPageViewController {
         
         for imageName in imagesUser {
             
-            guard let sizes = imageName.sizes?.last else { return }
+            guard let sizes = imageName.sizes.last else { return }
             
             imagesSize.append(sizes)
         }
@@ -75,6 +74,7 @@ class PageViewController: UIPageViewController {
             DispatchQueue.main.async {
                 
                 imagesFriendController.imagesFriend.image = UIImage(data: imageData)
+                imagesFriendController.view.reloadInputViews()
             }
         }
         imagesFriendController.currentPage = index

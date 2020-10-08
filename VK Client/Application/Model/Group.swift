@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Group: Decodable {
+class Group: Object, Decodable {
     
-    var id: Int?
-    var name: String?
-    var photo50: String?
+    @objc dynamic var id = 0
+    @objc dynamic var name: String?
+    @objc dynamic var photo50: String?
 }

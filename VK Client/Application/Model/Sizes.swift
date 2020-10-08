@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Sizes: Decodable {
+class Sizes: Object, Decodable {
     
-    var type: String?
-    var src: String?
+    @objc dynamic var type: String?
+    @objc dynamic var src: String?
 }
