@@ -69,7 +69,10 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let friends = try decoder.decode(Response<User>.self, from: data).response?.items else { return }
                 
-                completion(friends)
+                DispatchQueue.main.async {
+                    
+                    completion(friends)
+                }
             } catch {
                 print(error.localizedDescription)
             }
@@ -102,7 +105,10 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let photo = try decoder.decode(Response<Photo>.self, from: data).response?.items else { return }
                 
-                completion(photo)
+                DispatchQueue.main.async {
+                    
+                    completion(photo)
+                }
             } catch {
                 print(error.localizedDescription)
             }
@@ -133,7 +139,10 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let groups = try decoder.decode(Response<Group>.self, from: data).response?.items else { return }
                 
-                completion(groups)
+                DispatchQueue.main.async {
+                    
+                    completion(groups)
+                }
             } catch {
                 print(error.localizedDescription)
             }

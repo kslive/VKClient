@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailFriendController: UICollectionViewController {
     
-    let networkManager = NetworkManager()
+    let realmManager = RealmManager()
     var friendsImage: Photo?
     var titleItem: String?
     var ownerID: Int?
@@ -19,7 +20,6 @@ class DetailFriendController: UICollectionViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
-        fetchRequestPhotosUser(for: ownerID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,15 +31,17 @@ class DetailFriendController: UICollectionViewController {
     // MARK: Help Function
     
     func fetchRequestPhotosUser(for id: Int?) {
-        
-        networkManager.fetchRequestPhotosUser(for: id) { [weak self] photos in
-                  
-            self?.friendsImage = photos.last
-
-            DispatchQueue.main.async {
                 
-                self?.collectionView.reloadData()
-            }
+        do {
+            let realm = try Realm()
+            
+            let photo = realm.objects(Photo.self)
+            
+            friendsImage = Array(photo).first
+            
+        } catch {
+            
+            print(error)
         }
     }
     
@@ -62,7 +64,7 @@ class DetailFriendController: UICollectionViewController {
         
         let pageViewController = segue.destination as? PageViewController
         
-        pageViewController?.ownerID = ownerID
+        pageViewController?.fetchRequestPhotosUser(for: ownerID)
         pageViewController?.titleItem = titleItem
     }
 

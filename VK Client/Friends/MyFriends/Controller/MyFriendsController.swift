@@ -58,7 +58,7 @@ class MyFriendsController: UITableViewController {
 
         for friend in friends {
 
-            guard let name = friend.firstName else { return }
+            guard let name = friend.returnFullName() else { return }
             let key = "\(name[name.startIndex])"
 
             if var friendValue = friendsDictionary[key] {
@@ -163,6 +163,8 @@ class MyFriendsController: UITableViewController {
 
                     let friends = filteredUsers[indexPath.row]
 
+                    realmManager.updatePhotos(for: friends.id)
+                    detailFriendController?.fetchRequestPhotosUser(for: friends.id)
                     detailFriendController?.titleItem = friends.returnFullName()
                     detailFriendController?.ownerID = friends.id
                 } else {
@@ -173,6 +175,8 @@ class MyFriendsController: UITableViewController {
 
                         let friendsValue = friendValue[indexPath.row]
 
+                        realmManager.updatePhotos(for: friendsValue.id)
+                        detailFriendController?.fetchRequestPhotosUser(for: friendsValue.id)
                         detailFriendController?.titleItem = friendsValue.returnFullName()
                         detailFriendController?.ownerID = friendsValue.id
                     }

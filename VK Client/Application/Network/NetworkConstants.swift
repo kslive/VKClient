@@ -15,5 +15,5 @@ struct NetworkConstants {
     let scope = "262150"
     let host = "api.vk.com"
     
-    let clientID = "7616261"
+    let clientID = "7626122"
 }
