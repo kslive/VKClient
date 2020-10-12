@@ -46,6 +46,9 @@ class MyFriendsCell: UITableViewCell {
               let imageURL = URL(string: url),
               let imageData = try? Data(contentsOf: imageURL) else { return }
         
-        friendImage.image = UIImage(data: imageData)
+        DispatchQueue.main.async { [weak self] in
+            
+            self?.friendImage.image = UIImage(data: imageData)
+        }
     }
 }
