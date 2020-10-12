@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
-    let networkManager = NetworkManager()
+    let realmManager = RealmManager()
     var friends = [User]()
     var friendsSection = [String]()
     lazy var friendsDictionary = [String: [User]]()
@@ -39,25 +40,25 @@ class MyFriendsController: UITableViewController {
     
     private func fetchRequestFriends() {
         
-        networkManager.fetchRequestFriends { [weak self] users in
+        do {
+            let realm = try Realm()
             
-            for user in users {
-                
-                self?.friends.append(user)
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            }
-            self?.sortFriend()
+            let friend = realm.objects(User.self)
+            
+            friends = Array(friend)
+        } catch {
+            
+            print(error)
         }
+        
+        sortFriend()
     }
     
     private func sortFriend() {
 
         for friend in friends {
 
-            guard let name = friend.returnFullName() else { return }
+            guard let name = friend.firstName else { return }
             let key = "\(name[name.startIndex])"
 
             if var friendValue = friendsDictionary[key] {

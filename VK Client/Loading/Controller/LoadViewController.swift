@@ -9,6 +9,8 @@
 import UIKit
 
 class LoadViewController: UIViewController {
+    
+    private let realmManager = RealmManager()
 
     @IBOutlet weak var firstPointLoad: UILabel!
     @IBOutlet weak var secondPointLoad: UILabel!
@@ -17,6 +19,8 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        realmManager.updateFriends()
+        realmManager.updateGroups()
     }
     
     override func viewWillAppear(_ animated: Bool) {
