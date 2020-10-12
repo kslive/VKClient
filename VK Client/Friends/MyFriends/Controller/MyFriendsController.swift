@@ -163,7 +163,6 @@ class MyFriendsController: UITableViewController {
 
                     let friends = filteredUsers[indexPath.row]
 
-                    realmManager.updatePhotos(for: friends.id)
                     detailFriendController?.fetchRequestPhotosUser(for: friends.id)
                     detailFriendController?.titleItem = friends.returnFullName()
                     detailFriendController?.ownerID = friends.id
@@ -175,7 +174,6 @@ class MyFriendsController: UITableViewController {
 
                         let friendsValue = friendValue[indexPath.row]
 
-                        realmManager.updatePhotos(for: friendsValue.id)
                         detailFriendController?.fetchRequestPhotosUser(for: friendsValue.id)
                         detailFriendController?.titleItem = friendsValue.returnFullName()
                         detailFriendController?.ownerID = friendsValue.id

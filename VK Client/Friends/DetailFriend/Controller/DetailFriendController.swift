@@ -32,6 +32,8 @@ class DetailFriendController: UICollectionViewController {
     
     func fetchRequestPhotosUser(for id: Int?) {
                 
+        realmManager.updatePhotos(for: id)
+    
         do {
             let realm = try Realm()
             
