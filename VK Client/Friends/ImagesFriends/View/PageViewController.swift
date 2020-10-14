@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PageViewController: UIPageViewController {
     
-    let networkManager = NetworkManager()
     var titleItem: String?
-    var ownerID: Int?
     var imagesUser = [Photo]()
     var imagesSize = [Sizes]()
     
@@ -21,23 +20,28 @@ class PageViewController: UIPageViewController {
         
         dataSource = self
         
-        fetchRequestPhotosUser(for: ownerID)
         setupNavigationBar()
     }
     
     func fetchRequestPhotosUser(for id: Int?) {
         
-        networkManager.fetchRequestPhotosUser(for: id) { [weak self] photos in
+        do {
+            let realm = try Realm()
             
-            self?.imagesUser = photos
+            let photo = realm.objects(Photo.self)
             
-            DispatchQueue.main.async {
-                
-                self?.setupView()
-            }
+            imagesUser = Array(photo)
+        } catch {
             
-            self?.setupSliderView()
+            print(error)
         }
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            self?.setupView()
+        }
+        
+        self.setupSliderView()
     }
     
     func setupSliderView() {
@@ -61,22 +65,20 @@ class PageViewController: UIPageViewController {
     }
     
     func showViewControllerAtIndex(_ index: Int) -> ImagesFriendController? {
-                        
+        
         guard index >= 0, index < imagesSize.count,
               let imagesFriendController = storyboard?.instantiateViewController(withIdentifier: "ImagesFriendController") as? ImagesFriendController else { return nil }
         
-        DispatchQueue.global().async { [weak self] in
+        guard let url = imagesSize[index].src,
+              let imageURL = URL(string: url),
+              let imageData = try? Data(contentsOf: imageURL) else { return nil }
+        
+        DispatchQueue.main.async {
             
-            guard let url = self?.imagesSize[index].src,
-                  let imageURL = URL(string: url),
-                  let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async {
-                
-                imagesFriendController.imagesFriend.image = UIImage(data: imageData)
-                imagesFriendController.view.reloadInputViews()
-            }
+            imagesFriendController.imagesFriend.image = UIImage(data: imageData)
+            imagesFriendController.view.reloadInputViews()
         }
+        
         imagesFriendController.currentPage = index
         imagesFriendController.numberOfPages = imagesSize.count
         

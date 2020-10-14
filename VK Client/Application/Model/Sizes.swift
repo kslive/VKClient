@@ -11,6 +11,6 @@ import RealmSwift
 
 class Sizes: Object, Decodable {
     
-    @objc dynamic var type: String?
-    @objc dynamic var src: String?
+    @objc dynamic var type: String? = nil
+    @objc dynamic var src: String? = nil
 }

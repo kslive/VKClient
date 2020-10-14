@@ -10,6 +10,8 @@ import UIKit
 
 class MyFriendsCell: UITableViewCell {
     
+    private let networkManager = NetworkManager()
+    
     @IBOutlet weak var nameSurnameLabel: UILabel!
     @IBOutlet weak var friendImage: UIImageView!
     @IBOutlet weak var animationButton: UIButton!
@@ -37,21 +39,18 @@ class MyFriendsCell: UITableViewCell {
     }
     
     func configure(for model: User) {
-
+        
         guard let name = model.returnFullName() else { return }
         
         nameSurnameLabel.text = name
         
-        DispatchQueue.global().async {
+        guard let url = model.photo100,
+              let imageURL = URL(string: url),
+              let imageData = try? Data(contentsOf: imageURL) else { return }
+        
+        DispatchQueue.main.async { [weak self] in
             
-            guard let url = model.photo100,
-                  let imageURL = URL(string: url),
-                  let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                
-                self?.friendImage.image = UIImage(data: imageData)
-            }
+            self?.friendImage.image = UIImage(data: imageData)
         }
     }
 }

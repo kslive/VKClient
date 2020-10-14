@@ -9,6 +9,8 @@
 import UIKit
 
 class LoadViewController: UIViewController {
+    
+    private let networkManager = NetworkManager()
 
     @IBOutlet weak var firstPointLoad: UILabel!
     @IBOutlet weak var secondPointLoad: UILabel!
@@ -17,6 +19,9 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        networkManager.fetchRequestFriends()
+        networkManager.fetchRequestGroupsUser()
+        networkManager.fetchRequestPhotosUser(for: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {

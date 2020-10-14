@@ -42,16 +42,13 @@ class MyGroupsCell: UITableViewCell {
         
         myGroupNameLabel.text = name
         
-        DispatchQueue.global().async {
+        guard let url = model.photo50,
+              let imageURL = URL(string: url),
+              let imageData = try? Data(contentsOf: imageURL) else { return }
+        
+        DispatchQueue.main.async { [weak self] in
             
-            guard let url = model.photo50,
-                  let imageURL = URL(string: url),
-                  let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                
-                self?.myGroupImage.image = UIImage(data: imageData)
-            }
+            self?.myGroupImage.image = UIImage(data: imageData)
         }
     }
 }

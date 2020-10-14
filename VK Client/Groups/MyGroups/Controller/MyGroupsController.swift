@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyGroupsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
-    let networkManager = NetworkManager()
+    let realmManager = RealmManager()
     var myGroups = [Group]()
     var filteredGroups = [Group]()
     var searchBarIsEmpty: Bool {
@@ -58,18 +59,17 @@ class MyGroupsController: UITableViewController {
     
     // MARK: Help Function
     
-    func fetchRequestGroupsUser() {
+    private func fetchRequestGroupsUser() {
         
-        networkManager.fetchRequestGroupsUser { [weak self] groups in
+        do {
+            let realm = try Realm()
             
-            for group in groups {
-                
-                self?.myGroups.append(group)
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            }
+            let groups = realm.objects(Group.self)
+            
+            myGroups = Array(groups)
+        } catch {
+            
+            print(error)
         }
     }
     

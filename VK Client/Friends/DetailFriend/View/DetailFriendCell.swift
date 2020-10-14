@@ -10,6 +10,7 @@ import UIKit
 
 class DetailFriendCell: UICollectionViewCell {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var shadowView: ShadowView!
     @IBOutlet weak var detailFriendImage: UIImageView! {
         didSet {
@@ -29,23 +30,30 @@ class DetailFriendCell: UICollectionViewCell {
         super.awakeFromNib()
         
         shadowView.isHidden = true
+        setupActivityIndicator()
     }
     
     @IBAction func openedImageSlider(_ sender: UIButton) {
     }
     
+    func setupActivityIndicator() {
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .white
+        activityIndicator.startAnimating()
+    }
+    
     func configure(for model: Sizes) {
         
-        DispatchQueue.global().async { 
+        guard let url = model.src,
+              let imageURL = URL(string: url),
+              let imageData = try? Data(contentsOf: imageURL) else { return }
+        
+        DispatchQueue.main.async { [weak self] in
             
-            guard let url = model.src,
-                  let imageURL = URL(string: url),
-                  let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                
-                self?.detailFriendImage.image = UIImage(data: imageData)
-            }
+            self?.detailFriendImage.image = UIImage(data: imageData)
         }
+    
+        activityIndicator.stopAnimating()
     }
 }

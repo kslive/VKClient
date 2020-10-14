@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailFriendController: UICollectionViewController {
     
@@ -14,12 +15,11 @@ class DetailFriendController: UICollectionViewController {
     var friendsImage: Photo?
     var titleItem: String?
     var ownerID: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
-        fetchRequestPhotosUser(for: ownerID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,14 +32,24 @@ class DetailFriendController: UICollectionViewController {
     
     func fetchRequestPhotosUser(for id: Int?) {
         
-        networkManager.fetchRequestPhotosUser(for: id) { [weak self] photos in
-                  
-            self?.friendsImage = photos.last
-
-            DispatchQueue.main.async {
+        self.networkManager.fetchRequestPhotosUser(for: id)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            
+            do {
                 
-                self?.collectionView.reloadData()
+                let realm = try Realm()
+                
+                let photo = realm.objects(Photo.self).filter{ $0.ownerId == self?.ownerID}
+                
+                self?.friendsImage = Array(photo).first
+                
+            } catch {
+                
+                print(error)
             }
+            
+            self?.collectionView.reloadData()
         }
     }
     
@@ -62,27 +72,27 @@ class DetailFriendController: UICollectionViewController {
         
         let pageViewController = segue.destination as? PageViewController
         
-        pageViewController?.ownerID = ownerID
+        pageViewController?.fetchRequestPhotosUser(for: ownerID)
         pageViewController?.titleItem = titleItem
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailFriendCell", for: indexPath) as! DetailFriendCell
         
         guard let friendImage = friendsImage?.sizes.last else { return cell }
-                    
+        
         cell.configure(for: friendImage)
         
         return cell

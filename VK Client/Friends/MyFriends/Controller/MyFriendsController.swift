@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
@@ -14,7 +15,7 @@ class MyFriendsController: UITableViewController {
     let networkManager = NetworkManager()
     var friends = [User]()
     var friendsSection = [String]()
-    lazy var friendsDictionary = [String: [User]]()
+    var friendsDictionary = [String: [User]]()
     var filteredUsers = [User]()
     var searchBarIsEmpty: Bool {
         
@@ -39,18 +40,17 @@ class MyFriendsController: UITableViewController {
     
     private func fetchRequestFriends() {
         
-        networkManager.fetchRequestFriends { [weak self] users in
+        do {
+            let realm = try Realm()
             
-            for user in users {
-                
-                self?.friends.append(user)
-                
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            }
-            self?.sortFriend()
+            let friend = realm.objects(User.self)
+            
+            friends = Array(friend)
+        } catch {
+            
+            print(error)
         }
+        sortFriend()
     }
     
     private func sortFriend() {
@@ -103,7 +103,9 @@ class MyFriendsController: UITableViewController {
         
         if isFiltering {
 
-            cell.configure(for: filteredUsers[indexPath.row])
+            let friends = filteredUsers[indexPath.row]
+            
+            cell.configure(for: friends)
         } else {
 
             let friendKey = friendsSection[indexPath.section]
@@ -114,8 +116,10 @@ class MyFriendsController: UITableViewController {
                     friendValue = filteredUsers
                 }
 
+                let friends = friendValue[indexPath.row]
+                
                 cell.selectionStyle = .none
-                cell.configure(for: friendValue[indexPath.row])
+                cell.configure(for: friends)
             }
         }
         
@@ -161,7 +165,8 @@ class MyFriendsController: UITableViewController {
                 if isFiltering {
 
                     let friends = filteredUsers[indexPath.row]
-
+                        
+                    detailFriendController?.fetchRequestPhotosUser(for: friends.id)
                     detailFriendController?.titleItem = friends.returnFullName()
                     detailFriendController?.ownerID = friends.id
                 } else {
@@ -172,6 +177,7 @@ class MyFriendsController: UITableViewController {
 
                         let friendsValue = friendValue[indexPath.row]
 
+                        detailFriendController?.fetchRequestPhotosUser(for: friendsValue.id)
                         detailFriendController?.titleItem = friendsValue.returnFullName()
                         detailFriendController?.ownerID = friendsValue.id
                     }
