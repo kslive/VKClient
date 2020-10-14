@@ -11,11 +11,11 @@ import RealmSwift
 
 class DetailFriendController: UICollectionViewController {
     
-    let realmManager = RealmManager()
+    let networkManager = NetworkManager()
     var friendsImage: Photo?
     var titleItem: String?
     var ownerID: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,10 +31,11 @@ class DetailFriendController: UICollectionViewController {
     // MARK: Help Function
     
     func fetchRequestPhotosUser(for id: Int?) {
-                
-        realmManager.updatePhotos(for: id)
-    
+        
+        networkManager.fetchRequestPhotosUser(for: id)
+        
         do {
+            
             let realm = try Realm()
             
             let photo = realm.objects(Photo.self)
@@ -69,24 +70,24 @@ class DetailFriendController: UICollectionViewController {
         pageViewController?.fetchRequestPhotosUser(for: ownerID)
         pageViewController?.titleItem = titleItem
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailFriendCell", for: indexPath) as! DetailFriendCell
         
         guard let friendImage = friendsImage?.sizes.last else { return cell }
-                    
+        
         cell.configure(for: friendImage)
         
         return cell

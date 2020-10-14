@@ -12,10 +12,10 @@ import RealmSwift
 class MyFriendsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
-    let realmManager = RealmManager()
+    let networkManager = NetworkManager()
     var friends = [User]()
     var friendsSection = [String]()
-    lazy var friendsDictionary = [String: [User]]()
+    var friendsDictionary = [String: [User]]()
     var filteredUsers = [User]()
     var searchBarIsEmpty: Bool {
         
@@ -50,7 +50,6 @@ class MyFriendsController: UITableViewController {
             
             print(error)
         }
-        
         sortFriend()
     }
     
@@ -104,7 +103,9 @@ class MyFriendsController: UITableViewController {
         
         if isFiltering {
 
-            cell.configure(for: filteredUsers[indexPath.row])
+            let friends = filteredUsers[indexPath.row]
+            
+            cell.configure(for: friends)
         } else {
 
             let friendKey = friendsSection[indexPath.section]
@@ -115,8 +116,10 @@ class MyFriendsController: UITableViewController {
                     friendValue = filteredUsers
                 }
 
+                let friends = friendValue[indexPath.row]
+                
                 cell.selectionStyle = .none
-                cell.configure(for: friendValue[indexPath.row])
+                cell.configure(for: friends)
             }
         }
         
@@ -162,7 +165,7 @@ class MyFriendsController: UITableViewController {
                 if isFiltering {
 
                     let friends = filteredUsers[indexPath.row]
-
+                        
                     detailFriendController?.fetchRequestPhotosUser(for: friends.id)
                     detailFriendController?.titleItem = friends.returnFullName()
                     detailFriendController?.ownerID = friends.id

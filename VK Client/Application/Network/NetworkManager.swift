@@ -14,6 +14,7 @@ class NetworkManager {
     private let constants = NetworkConstants()
     private let configuration: URLSessionConfiguration!
     private let session: URLSession!
+    private let realmManager = RealmManager()
     
     init() {
         
@@ -47,7 +48,7 @@ class NetworkManager {
     
     // MARK: Friends
     
-    func fetchRequestFriends(completion: @escaping ([User]) -> ()) {
+    func fetchRequestFriends() {
         
         urlComponents.path = "/method/friends.get"
         
@@ -58,7 +59,7 @@ class NetworkManager {
             URLQueryItem(name: "v", value: constants.versionAPI)
         ]
         
-        session.dataTask(with: urlComponents.url!) { (data, response, error) in
+        session.dataTask(with: urlComponents.url!) { [weak self] (data, response, error) in
             
             guard let data = data else { return }
             
@@ -69,10 +70,7 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let friends = try decoder.decode(Response<User>.self, from: data).response?.items else { return }
                 
-                DispatchQueue.main.async {
-                    
-                    completion(friends)
-                }
+                self?.realmManager.updateFriends(for: friends)
             } catch {
                 print(error.localizedDescription)
             }
@@ -80,7 +78,7 @@ class NetworkManager {
     }
     // MARK: Photos User
     
-    func fetchRequestPhotosUser(for ownerID: Int?, completion: @escaping ([Photo]) -> ()) {
+    func fetchRequestPhotosUser(for ownerID: Int?) {
         
         urlComponents.path = "/method/photos.getAll"
         
@@ -94,7 +92,7 @@ class NetworkManager {
             URLQueryItem(name: "v", value: constants.versionAPI)
         ]
         
-        session.dataTask(with: urlComponents.url!) { (data, response, error) in
+        session.dataTask(with: urlComponents.url!) { [weak self] (data, response, error) in
             
             guard let data = data else { return }
             
@@ -105,10 +103,7 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let photo = try decoder.decode(Response<Photo>.self, from: data).response?.items else { return }
                 
-                DispatchQueue.main.async {
-                    
-                    completion(photo)
-                }
+                self?.realmManager.updatePhotos(for: photo)
             } catch {
                 print(error.localizedDescription)
             }
@@ -117,7 +112,7 @@ class NetworkManager {
     
     // MARK: Groups User
     
-    func fetchRequestGroupsUser(completion: @escaping ([Group]) -> ()) {
+    func fetchRequestGroupsUser() {
         
         urlComponents.path = "/method/groups.get"
         
@@ -128,7 +123,7 @@ class NetworkManager {
             URLQueryItem(name: "v", value: constants.versionAPI)
         ]
         
-        session.dataTask(with: urlComponents.url!) { (data, response, error) in
+        session.dataTask(with: urlComponents.url!) { [weak self] (data, response, error) in
             
             guard let data = data else { return }
             
@@ -139,10 +134,7 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let groups = try decoder.decode(Response<Group>.self, from: data).response?.items else { return }
                 
-                DispatchQueue.main.async {
-                    
-                    completion(groups)
-                }
+                self?.realmManager.updateGroups(for: groups)
             } catch {
                 print(error.localizedDescription)
             }

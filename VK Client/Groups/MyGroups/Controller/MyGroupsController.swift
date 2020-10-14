@@ -59,7 +59,7 @@ class MyGroupsController: UITableViewController {
     
     // MARK: Help Function
     
-    func fetchRequestGroupsUser() {
+    private func fetchRequestGroupsUser() {
         
         do {
             let realm = try Realm()

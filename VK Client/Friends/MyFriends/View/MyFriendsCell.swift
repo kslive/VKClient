@@ -10,6 +10,8 @@ import UIKit
 
 class MyFriendsCell: UITableViewCell {
     
+    private let networkManager = NetworkManager()
+    
     @IBOutlet weak var nameSurnameLabel: UILabel!
     @IBOutlet weak var friendImage: UIImageView!
     @IBOutlet weak var animationButton: UIButton!

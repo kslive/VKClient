@@ -10,7 +10,7 @@ import UIKit
 
 class LoadViewController: UIViewController {
     
-    private let realmManager = RealmManager()
+    private let networkManager = NetworkManager()
 
     @IBOutlet weak var firstPointLoad: UILabel!
     @IBOutlet weak var secondPointLoad: UILabel!
@@ -19,8 +19,8 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        realmManager.updateFriends()
-        realmManager.updateGroups()
+        networkManager.fetchRequestFriends()
+        networkManager.fetchRequestGroupsUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {

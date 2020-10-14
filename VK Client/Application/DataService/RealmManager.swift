@@ -10,69 +10,59 @@ import Foundation
 import RealmSwift
 
 class RealmManager {
-    
-    private let networkManager = NetworkManager()
-    
-    func updateFriends() {
         
-        networkManager.fetchRequestFriends { friends in
+    func updateFriends(for friends: [User]) {
+        
+        do {
             
-            do {
-                
-                let realm = try Realm()
-                let oldValue = realm.objects(User.self)
-                
-                realm.beginWrite()
-                realm.delete(oldValue)
-                realm.add(friends)
-                
-                try realm.commitWrite()
-            } catch {
-                
-                print(error)
-            }
+            let realm = try Realm()
+            let oldValue = realm.objects(User.self)
+            
+            realm.beginWrite()
+            realm.delete(oldValue)
+            realm.add(friends)
+            
+            try realm.commitWrite()
+        } catch {
+            
+            print(error)
         }
     }
     
-    func updateGroups() {
+    func updateGroups(for groups: [Group]) {
         
-        networkManager.fetchRequestGroupsUser { groups in
+        do {
             
-            do {
-                
-                let realm = try Realm()
-                let oldValue = realm.objects(Group.self)
-                
-                realm.beginWrite()
-                realm.delete(oldValue)
-                realm.add(groups)
-                
-                try realm.commitWrite()
-            } catch {
-                
-                print(error)
-            }
+            let realm = try Realm()
+            let oldValue = realm.objects(Group.self)
+            
+            realm.beginWrite()
+            realm.delete(oldValue)
+            realm.add(groups)
+            
+            try realm.commitWrite()
+        } catch {
+            
+            print(error)
         }
     }
     
-    func updatePhotos(for userId: Int?) {
+    func updatePhotos(for photos: [Photo]) {
         
-        networkManager.fetchRequestPhotosUser(for: userId) { photos in
+        do {
             
-            do {
-                
-                let realm = try Realm()
-                let oldValue = realm.objects(Photo.self)
-                
-                realm.beginWrite()
-                realm.delete(oldValue)
-                realm.add(photos)
-                
-                try realm.commitWrite()
-            } catch {
-                
-                print(error)
-            }
+            let realm = try Realm()
+            let oldValue = realm.objects(Photo.self)
+            
+            realm.beginWrite()
+            realm.delete(oldValue)
+            realm.add(photos)
+            
+            try realm.commitWrite()
+        } catch {
+            
+            print(error)
         }
+        
     }
 }
