@@ -70,7 +70,10 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let friends = try decoder.decode(Response<User>.self, from: data).response?.items else { return }
                 
-                self?.realmManager.updateFriends(for: friends)
+                DispatchQueue.main.async {
+                    
+                    self?.realmManager.updateFriends(for: friends)
+                }
             } catch {
                 print(error.localizedDescription)
             }
@@ -103,7 +106,10 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let photo = try decoder.decode(Response<Photo>.self, from: data).response?.items else { return }
                 
-                self?.realmManager.updatePhotos(for: photo)
+                DispatchQueue.main.async {
+                    
+                    self?.realmManager.updatePhotos(for: photo)
+                }
             } catch {
                 print(error.localizedDescription)
             }
@@ -134,7 +140,10 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let groups = try decoder.decode(Response<Group>.self, from: data).response?.items else { return }
                 
-                self?.realmManager.updateGroups(for: groups)
+                DispatchQueue.main.async {
+                    
+                    self?.realmManager.updateGroups(for: groups)
+                }
             } catch {
                 print(error.localizedDescription)
             }

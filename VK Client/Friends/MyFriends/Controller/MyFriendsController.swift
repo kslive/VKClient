@@ -51,7 +51,12 @@ class MyFriendsController: UITableViewController {
             
             print(error)
         }
-        sortFriend()
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            self?.sortFriend()
+            self?.tableView.reloadData()
+        }
     }
     
     private func sortFriend() {
