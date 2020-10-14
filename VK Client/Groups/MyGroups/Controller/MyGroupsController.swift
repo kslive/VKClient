@@ -13,7 +13,8 @@ class MyGroupsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let realmManager = RealmManager()
-    var myGroups = [Group]()
+    var myGroups: Results<Group>!
+    var token: NotificationToken?
     var filteredGroups = [Group]()
     var searchBarIsEmpty: Bool {
         
@@ -29,6 +30,7 @@ class MyGroupsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pairTableAndRealm()
         setupSearchController()
         fetchRequestGroupsUser()
     }
@@ -37,23 +39,6 @@ class MyGroupsController: UITableViewController {
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         
         if segue.identifier == "addGroup" {
-            guard let availableGroups = segue.source as? AvailableGroupsController else { return }
-            if let indexPath = availableGroups.tableView.indexPathForSelectedRow {
-                let group = availableGroups.allGroups[indexPath.row]
-
-                if !myGroups.contains(where: {$0.id == group.id}) {
-                    myGroups.append(group)
-                    tableView.reloadData()
-                } else {
-
-                    let alert = UIAlertController(title: "Choose another group",
-                                                  message: "This group already exists on your list",
-                                                  preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .cancel)
-                    alert.addAction(alertAction)
-                    present(alert, animated: true)
-                }
-            }
         }
     }
     
@@ -66,10 +51,43 @@ class MyGroupsController: UITableViewController {
             
             let groups = realm.objects(Group.self)
             
-            myGroups = Array(groups)
+            myGroups = groups
         } catch {
             
             print(error)
+        }
+    }
+    
+    private func pairTableAndRealm() {
+        
+        guard let realm = try? Realm() else { return }
+        
+        myGroups = realm.objects(Group.self)
+        
+        token = myGroups.observe { [weak self] (changes: RealmCollectionChange) in
+            
+            guard let tableView = self?.tableView else { return }
+            
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+                
+            case .update(_, let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0,
+                                                                    section: 0) }),
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0,
+                                                                   section: 0)}),
+                                     with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0,
+                                                                       section: 0) }),
+                                     with: .automatic)
+                tableView.endUpdates()
+                
+            case .error(let error):
+                fatalError("\(error)")
+            }
         }
     }
     

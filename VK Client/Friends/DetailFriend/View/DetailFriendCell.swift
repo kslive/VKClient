@@ -53,7 +53,7 @@ class DetailFriendCell: UICollectionViewCell {
             
             self?.detailFriendImage.image = UIImage(data: imageData)
         }
-    
+        
         activityIndicator.stopAnimating()
     }
 }

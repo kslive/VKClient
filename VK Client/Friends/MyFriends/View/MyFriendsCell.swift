@@ -9,9 +9,7 @@
 import UIKit
 
 class MyFriendsCell: UITableViewCell {
-    
-    private let networkManager = NetworkManager()
-    
+        
     @IBOutlet weak var nameSurnameLabel: UILabel!
     @IBOutlet weak var friendImage: UIImageView!
     @IBOutlet weak var animationButton: UIButton!
@@ -40,9 +38,10 @@ class MyFriendsCell: UITableViewCell {
     
     func configure(for model: User) {
         
-        guard let name = model.returnFullName() else { return }
+        guard let name = model.firstName,
+              let lastName = model.lastName else { return }
         
-        nameSurnameLabel.text = name
+        nameSurnameLabel.text = name + " " + lastName
         
         guard let url = model.photo100,
               let imageURL = URL(string: url),

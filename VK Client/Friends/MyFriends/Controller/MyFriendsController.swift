@@ -13,10 +13,11 @@ class MyFriendsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let networkManager = NetworkManager()
-    var friends = [User]()
+    var friends: Results<User>!
     var friendsSection = [String]()
     var friendsDictionary = [String: [User]]()
     var filteredUsers = [User]()
+    var token: NotificationToken?
     var searchBarIsEmpty: Bool {
         
         guard let text = searchController.searchBar.text else { return false }
@@ -45,7 +46,7 @@ class MyFriendsController: UITableViewController {
             
             let friend = realm.objects(User.self)
             
-            friends = Array(friend)
+            friends = friend
         } catch {
             
             print(error)
@@ -57,8 +58,11 @@ class MyFriendsController: UITableViewController {
 
         for friend in friends {
 
-            guard let name = friend.returnFullName() else { return }
-            let key = "\(name[name.startIndex])"
+            guard let name = friend.firstName,
+                  let lastName = friend.lastName else { return }
+            let fullName = name + " " + lastName
+            
+            let key = "\(fullName[fullName.startIndex])"
 
             if var friendValue = friendsDictionary[key] {
                 friendValue.append(friend)
@@ -165,9 +169,12 @@ class MyFriendsController: UITableViewController {
                 if isFiltering {
 
                     let friends = filteredUsers[indexPath.row]
+                    
+                    guard let name = friends.firstName,
+                          let lastName = friends.lastName else { return }
                         
                     detailFriendController?.fetchRequestPhotosUser(for: friends.id)
-                    detailFriendController?.titleItem = friends.returnFullName()
+                    detailFriendController?.titleItem = name + " " + lastName
                     detailFriendController?.ownerID = friends.id
                 } else {
                     
@@ -176,9 +183,12 @@ class MyFriendsController: UITableViewController {
                     if let friendValue = friendsDictionary[friendKey.uppercased()] {
 
                         let friendsValue = friendValue[indexPath.row]
+                        
+                        guard let name = friendsValue.firstName,
+                              let lastName = friendsValue.lastName else { return }
 
                         detailFriendController?.fetchRequestPhotosUser(for: friendsValue.id)
-                        detailFriendController?.titleItem = friendsValue.returnFullName()
+                        detailFriendController?.titleItem = name + " " + lastName
                         detailFriendController?.ownerID = friendsValue.id
                     }
                 }

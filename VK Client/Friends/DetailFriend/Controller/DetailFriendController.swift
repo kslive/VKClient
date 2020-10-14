@@ -33,8 +33,7 @@ class DetailFriendController: UICollectionViewController {
     func fetchRequestPhotosUser(for id: Int?) {
         
         self.networkManager.fetchRequestPhotosUser(for: id)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
             
             do {
                 
