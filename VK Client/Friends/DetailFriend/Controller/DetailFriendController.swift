@@ -32,19 +32,24 @@ class DetailFriendController: UICollectionViewController {
     
     func fetchRequestPhotosUser(for id: Int?) {
         
-        networkManager.fetchRequestPhotosUser(for: id)
+        self.networkManager.fetchRequestPhotosUser(for: id)
         
-        do {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             
-            let realm = try Realm()
+            do {
+                
+                let realm = try Realm()
+                
+                let photo = realm.objects(Photo.self).filter{ $0.ownerId == self?.ownerID}
+                
+                self?.friendsImage = Array(photo).first
+                
+            } catch {
+                
+                print(error)
+            }
             
-            let photo = realm.objects(Photo.self)
-            
-            friendsImage = Array(photo).first
-            
-        } catch {
-            
-            print(error)
+            self?.collectionView.reloadData()
         }
     }
     

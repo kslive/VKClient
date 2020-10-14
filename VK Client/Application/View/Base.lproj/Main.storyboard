@@ -378,8 +378,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH5-tt-kKs" customClass="RadiusView" customModule="VK_Client" customModuleProvider="target">
                                             <rect key="frame" x="20" y="20" width="260" height="260"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-pI-gYH">
-                                                    <rect key="frame" x="0.0" y="0.5" width="260" height="259"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeH-pI-gYH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="260"/>
                                                     <gestureRecognizers/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ga-Pc-FoX">
@@ -407,6 +407,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-hf-dbO" customClass="LikeControl" customModule="VK_Client" customModuleProvider="target">
                                             <rect key="frame" x="275" y="280" width="25" height="20"/>
                                         </view>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PLp-Qr-iFy">
+                                            <rect key="frame" x="140" y="140" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IH5-tt-kKs" firstAttribute="leading" secondItem="6QJ-qh-qAW" secondAttribute="leading" constant="20" id="0Rb-TX-iB4"/>
@@ -417,6 +420,8 @@
                                         <constraint firstAttribute="trailing" secondItem="gpJ-hf-dbO" secondAttribute="trailing" id="XYJ-6h-K3Z"/>
                                         <constraint firstAttribute="bottom" secondItem="IH5-tt-kKs" secondAttribute="bottom" constant="20" id="bWB-h4-5eo"/>
                                         <constraint firstAttribute="bottom" secondItem="yaX-Dg-lRX" secondAttribute="bottom" id="hvD-Ub-MSo"/>
+                                        <constraint firstItem="PLp-Qr-iFy" firstAttribute="centerX" secondItem="6QJ-qh-qAW" secondAttribute="centerX" id="jhv-uh-F7q"/>
+                                        <constraint firstItem="PLp-Qr-iFy" firstAttribute="centerY" secondItem="6QJ-qh-qAW" secondAttribute="centerY" id="nxr-Zq-bdv"/>
                                         <constraint firstItem="IH5-tt-kKs" firstAttribute="top" secondItem="6QJ-qh-qAW" secondAttribute="top" constant="20" id="o5n-H8-2cX"/>
                                         <constraint firstAttribute="bottom" secondItem="gpJ-hf-dbO" secondAttribute="bottom" id="phL-TL-NWG"/>
                                         <constraint firstAttribute="trailing" secondItem="IH5-tt-kKs" secondAttribute="trailing" constant="20" id="rhw-Vd-lFB"/>
@@ -425,6 +430,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="300" height="300"/>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="PLp-Qr-iFy" id="9aJ-ec-W5D"/>
                                     <outlet property="detailFriendImage" destination="MeH-pI-gYH" id="3kq-iT-njM"/>
                                     <outlet property="imageSliderButton" destination="8ga-Pc-FoX" id="xbP-AO-DBH"/>
                                     <outlet property="shadowView" destination="yaX-Dg-lRX" id="6hK-ca-RRg"/>
