@@ -33,7 +33,7 @@ class MyFriendsController: UITableViewController {
         fetchRequestFriends()
         setupSearchController()
         tableView.sectionIndexColor = .white
-        pairTableAndRealm()
+        bindTableAndRealm()
     }
     
     // MARK: - Help Function
@@ -52,7 +52,7 @@ class MyFriendsController: UITableViewController {
         }
     }
     
-    private func pairTableAndRealm() {
+    private func bindTableAndRealm() {
         
         guard let realm = try? Realm() else { return }
         

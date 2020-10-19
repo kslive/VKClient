@@ -30,7 +30,7 @@ class MyGroupsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pairTableAndRealm()
+        bindTableAndRealm()
         setupSearchController()
         fetchRequestGroupsUser()
     }
@@ -58,7 +58,7 @@ class MyGroupsController: UITableViewController {
         }
     }
     
-    private func pairTableAndRealm() {
+    private func bindTableAndRealm() {
         
         guard let realm = try? Realm() else { return }
         
