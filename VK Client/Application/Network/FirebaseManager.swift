@@ -11,13 +11,8 @@ import FirebaseDatabase
 
 class FirebaseManager {
     
-    private var ref: DatabaseReference?
+    private var ref = Database.database().reference()
     private var handle: AuthStateDidChangeListenerHandle!
-    
-    func removeStateDidChangeListener() {
-        
-        Auth.auth().removeStateDidChangeListener(handle)
-    }
     
     func configureAuthorization() {
         
@@ -29,10 +24,10 @@ class FirebaseManager {
                 return
             }
             let isAnonymous = user.isAnonymous
-            let uid = user.uid
             
             if isAnonymous {
-                print(uid)
+                
+                print(user.uid)
             }
         }
     }
@@ -56,5 +51,33 @@ class FirebaseManager {
                 onCompleted()
             }
         }
+    }
+    
+    func saveUser(userID: String) {
+        
+        let referenceChild = ref.child("Users")
+        let value = userID
+        
+        referenceChild.setValue(value)
+        
+    }
+    
+    func saveUserGroups(userID: Int ,group: Group) {
+        
+        let referenceChild = ref.child("Users")
+        
+        var values = [[String : Any]]()
+        
+        let groupID = group.id
+        guard let groupName = group.name else { return }
+        
+        let value: [String : Any] = [
+            "id" : "\(groupID)",
+            "groupName" : "\(groupName)",
+        ]
+        
+        values.append(value)
+        
+        referenceChild.child("\(userID)").child("Group").setValue(values)
     }
 }

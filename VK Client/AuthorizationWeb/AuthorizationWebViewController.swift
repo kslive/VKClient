@@ -20,28 +20,12 @@ class AuthorizationWebViewController: UIViewController {
         }
     }
     
-    // MARK: Life Cicle
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadRequest()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        firebaseManager.observeAuthUser { [weak self] in
-            
-            let loadViewController = (self?.storyboard!.instantiateViewController(withIdentifier: "LoadView"))! as UIViewController
-            self?.present(loadViewController, animated: true, completion: nil)
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        firebaseManager.removeStateDidChangeListener()
     }
     
     // MARK: Actions
@@ -67,7 +51,6 @@ class AuthorizationWebViewController: UIViewController {
         guard let request = networkManager.fetchRequestAuthorization() else { return }
         
         webView.load(request)
-        firebaseManager.configureAuthorization()
     }
 }
 
@@ -98,6 +81,12 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
         
         guard token != nil,
               let user = userID else { return }
+        
+        firebaseManager.saveUser(userID: user)
+        firebaseManager.configureAuthorization()
+        
+        let loadViewController = storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
+        present(loadViewController, animated: true, completion: nil)
         
         Session.shared.token = token!
         decisionHandler(.cancel)
