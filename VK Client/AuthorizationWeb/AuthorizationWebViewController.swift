@@ -11,7 +11,8 @@ import WebKit
 
 class AuthorizationWebViewController: UIViewController {
     
-    let networkManager = NetworkManager()
+    private let networkManager = NetworkManager()
+    private let firebaseManager = FirebaseManager()
     
     @IBOutlet weak var webView: WKWebView! {
         didSet {
@@ -19,14 +20,57 @@ class AuthorizationWebViewController: UIViewController {
         }
     }
     
+    // MARK: Life Cicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loadRequest()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        firebaseManager.observeAuthUser { [weak self] in
+            
+            let loadViewController = (self?.storyboard!.instantiateViewController(withIdentifier: "LoadView"))! as UIViewController
+            self?.present(loadViewController, animated: true, completion: nil)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        firebaseManager.removeStateDidChangeListener()
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
+        
+        logOut()
+    }
+    
+    // MARK: Help Functions
+    
+    private func logOut() {
+        
+        firebaseManager.logOut { [weak self] in
+            
+            self?.loadRequest()
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func loadRequest() {
+        
         guard let request = networkManager.fetchRequestAuthorization() else { return }
+        
         webView.load(request)
+        firebaseManager.configureAuthorization()
     }
 }
-    
+
 extension AuthorizationWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -52,12 +96,10 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
         
         Session.shared.userId = Int(userID ?? "")
         
-        guard token != nil else { return }
+        guard token != nil,
+              let user = userID else { return }
         
         Session.shared.token = token!
-        let loadViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
-        self.present(loadViewController, animated: true, completion: nil)
-        
         decisionHandler(.cancel)
     }
 }

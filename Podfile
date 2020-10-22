@@ -7,5 +7,6 @@ target 'VK Client' do
 
   pod 'RealmSwift'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end

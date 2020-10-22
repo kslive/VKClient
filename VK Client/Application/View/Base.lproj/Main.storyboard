@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ss9-TQ-gcB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccG-qj-MY2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="2HZ-Ke-jlh">
-            <objects>
-                <viewController id="ss9-TQ-gcB" customClass="LoginViewController" customModule="VK_Client" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pgW-GV-DpI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VKLogo" highlightedImage="VKLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3r2-cS-m0U">
-                                <rect key="frame" x="157" y="44" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="CNz-gO-vVm"/>
-                                    <constraint firstAttribute="height" constant="100" id="y8Q-8z-oXj"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aX-WO-YYO">
-                                <rect key="frame" x="164" y="427" width="86" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="SIGN IN"/>
-                                <connections>
-                                    <action selector="pressedSignInButton:" destination="ss9-TQ-gcB" eventType="touchUpInside" id="qLR-qZ-An6"/>
-                                    <segue destination="ccG-qj-MY2" kind="presentation" id="wyK-0K-uWi"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bTv-bl-zpL"/>
-                        <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bTv-bl-zpL" firstAttribute="trailing" secondItem="3r2-cS-m0U" secondAttribute="trailing" constant="157" id="Qam-mr-hid"/>
-                            <constraint firstItem="3aX-WO-YYO" firstAttribute="centerX" secondItem="pgW-GV-DpI" secondAttribute="centerX" id="XIz-qF-jLz"/>
-                            <constraint firstItem="3aX-WO-YYO" firstAttribute="centerY" secondItem="pgW-GV-DpI" secondAttribute="centerY" id="ajy-ct-D11"/>
-                            <constraint firstItem="3r2-cS-m0U" firstAttribute="top" secondItem="bTv-bl-zpL" secondAttribute="top" id="lvG-jZ-zPG"/>
-                            <constraint firstItem="3r2-cS-m0U" firstAttribute="leading" secondItem="bTv-bl-zpL" secondAttribute="leading" constant="157" id="mbJ-5J-eJa"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="signInButton" destination="3aX-WO-YYO" id="OtS-YA-6mD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="edx-e4-cHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1007" y="39"/>
-        </scene>
         <!--Authorization Web View Controller-->
         <scene sceneID="NTl-hj-hI4">
             <objects>
@@ -61,45 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzl-u7-uAf">
-                                <rect key="frame" x="10" y="44" width="89" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="avU-5u-B3T"/>
-                                    <constraint firstAttribute="height" constant="30" id="b2r-Rh-xSQ"/>
-                                </constraints>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="uS6-XV-0Vc" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="cRb-CG-1vq"/>
-                                </connections>
-                            </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deb-Tw-jWJ">
-                                <rect key="frame" x="0.0" y="74" width="414" height="822"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VKLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kQ2-MA-XYT">
-                                <rect key="frame" x="85.5" y="44" width="243" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="243" id="66W-mr-7Bf"/>
-                                    <constraint firstAttribute="height" constant="30" id="pM4-GM-pVc"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="anV-4F-u2w"/>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kQ2-MA-XYT" firstAttribute="top" secondItem="anV-4F-u2w" secondAttribute="top" id="7LD-hc-1yt"/>
-                            <constraint firstItem="kQ2-MA-XYT" firstAttribute="centerX" secondItem="Deg-WT-js2" secondAttribute="centerX" id="DlX-Lq-phz"/>
+                            <constraint firstAttribute="bottom" secondItem="deb-Tw-jWJ" secondAttribute="bottom" id="D1M-Wb-FAc"/>
                             <constraint firstItem="deb-Tw-jWJ" firstAttribute="trailing" secondItem="anV-4F-u2w" secondAttribute="trailing" id="GpN-zh-cNX"/>
-                            <constraint firstAttribute="bottom" secondItem="deb-Tw-jWJ" secondAttribute="bottom" id="IA7-ak-P0o"/>
                             <constraint firstItem="deb-Tw-jWJ" firstAttribute="leading" secondItem="anV-4F-u2w" secondAttribute="leading" id="ZAR-Px-VNk"/>
-                            <constraint firstItem="uzl-u7-uAf" firstAttribute="leading" secondItem="anV-4F-u2w" secondAttribute="leading" constant="10" id="cbz-nw-OaU"/>
-                            <constraint firstItem="uzl-u7-uAf" firstAttribute="top" secondItem="anV-4F-u2w" secondAttribute="top" id="egU-nZ-Nn7"/>
-                            <constraint firstItem="anV-4F-u2w" firstAttribute="trailing" secondItem="uzl-u7-uAf" secondAttribute="trailing" constant="315" id="fh8-oZ-ZUX"/>
-                            <constraint firstItem="deb-Tw-jWJ" firstAttribute="top" secondItem="uzl-u7-uAf" secondAttribute="bottom" id="l4g-w9-KVI"/>
+                            <constraint firstItem="deb-Tw-jWJ" firstAttribute="top" secondItem="Deg-WT-js2" secondAttribute="top" id="uJG-6t-EIG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dw1-FV-NcL"/>
@@ -108,9 +42,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiX-Lb-526" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="uS6-XV-0Vc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-288" y="39"/>
+            <point key="canvasLocation" x="-288.40579710144931" y="38.839285714285715"/>
         </scene>
         <!--Load View Controller-->
         <scene sceneID="14U-Sr-dti">
@@ -243,7 +176,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="w2W-OB-7vY">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="Ux9-am-cp7">
                             <connections>
-                                <segue destination="ABJ-Kk-Ej7" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="pr0-4r-jWu"/>
+                                <segue destination="ABJ-Kk-Ej7" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="yeJ-ID-K3Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -320,7 +253,7 @@
                     <navigationItem key="navigationItem" title="My Groups" id="GRg-ud-vMf">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="KV2-gN-inL">
                             <connections>
-                                <segue destination="X9M-yI-YK7" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="ghU-dZ-UaP"/>
+                                <segue destination="X9M-yI-YK7" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="g80-OA-eXt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JeW-sH-RMx">
@@ -754,7 +687,7 @@
                     <navigationItem key="navigationItem" title="News" id="iWe-e7-T84">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="PD5-D2-Xiq">
                             <connections>
-                                <segue destination="Pdq-2Z-ltK" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="I78-LO-Na0"/>
+                                <segue destination="Pdq-2Z-ltK" kind="unwind" unwindAction="myUnwindActionWithSegue:" id="C3P-67-L5Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -822,9 +755,6 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="viewFlipsideBackgroundColor">
-            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
