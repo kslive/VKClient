@@ -11,7 +11,8 @@ import WebKit
 
 class AuthorizationWebViewController: UIViewController {
     
-    let networkManager = NetworkManager()
+    private let networkManager = NetworkManager()
+    private let firebaseManager = FirebaseManager()
     
     @IBOutlet weak var webView: WKWebView! {
         didSet {
@@ -19,14 +20,40 @@ class AuthorizationWebViewController: UIViewController {
         }
     }
     
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loadRequest()
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
+        
+        logOut()
+    }
+    
+    // MARK: Help Functions
+    
+    private func logOut() {
+        
+        firebaseManager.logOut { [weak self] in
+            
+            self?.loadRequest()
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func loadRequest() {
+        
         guard let request = networkManager.fetchRequestAuthorization() else { return }
+        
         webView.load(request)
     }
 }
-    
+
 extension AuthorizationWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -52,12 +79,16 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
         
         Session.shared.userId = Int(userID ?? "")
         
-        guard token != nil else { return }
+        guard token != nil,
+              let user = userID else { return }
+        
+        firebaseManager.saveUser(userID: user)
+        firebaseManager.configureAuthorization()
+        
+        let loadViewController = storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
+        present(loadViewController, animated: true, completion: nil)
         
         Session.shared.token = token!
-        let loadViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
-        self.present(loadViewController, animated: true, completion: nil)
-        
         decisionHandler(.cancel)
     }
 }

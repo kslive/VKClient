@@ -11,6 +11,7 @@ import UIKit
 class AvailableGroupsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
+    let firebaseManager = FirebaseManager()
     let networkManager = NetworkManager()
     var allGroups = [Group]()
     var searchBarIsEmpty: Bool {
@@ -23,7 +24,7 @@ class AvailableGroupsController: UITableViewController {
         
         return searchController.isActive && !searchBarIsEmpty
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,26 +36,26 @@ class AvailableGroupsController: UITableViewController {
     func fetchRequestSearchGroups(text: String?) {
         
         networkManager.fetchRequestSearchGroups(text: text) { [weak self] groups in
+            
+            DispatchQueue.main.async {
                 
-                DispatchQueue.main.async {
+                if self!.isFiltering {
                     
-                    if self!.isFiltering {
-                        
-                        self?.allGroups = groups
-                    }
-                    
-                    self?.tableView.reloadData()
+                    self?.allGroups = groups
                 }
+                
+                self?.tableView.reloadData()
+            }
             
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if isFiltering {
@@ -63,7 +64,7 @@ class AvailableGroupsController: UITableViewController {
         
         return 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableGroupsCell", for: indexPath) as! AvailableGroupsCell
@@ -78,4 +79,14 @@ class AvailableGroupsController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            
+            guard let userID = Session.shared.userId else { return }
+            let group = allGroups[indexPath.row]
+            
+            firebaseManager.saveUserGroups(userID: userID, group: group)
+        }
+    }
 }
