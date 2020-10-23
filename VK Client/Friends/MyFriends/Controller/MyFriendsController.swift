@@ -67,7 +67,7 @@ class MyFriendsController: UITableViewController {
                 tableView.reloadData()
                 
             case .update(_, let deletions, let insertions, let modifications):
-                tableView.beginUpdates()
+                tableView.beginUpdates() // use this https://developer.apple.com/videos/play/wwdc2019/220
                 tableView.insertRows(at: insertions.map({ IndexPath(row: $0,
                                                                     section: 0) }),
                                      with: .automatic)
