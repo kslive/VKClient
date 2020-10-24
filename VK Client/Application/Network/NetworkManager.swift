@@ -81,7 +81,7 @@ class NetworkManager {
     }
     // MARK: Photos User
     
-    func fetchRequestPhotosUser(for ownerID: Int?) {
+    func fetchRequestPhotosUser(for ownerID: Int?, callback: @escaping () -> ()) {
         
         urlComponents.path = "/method/photos.getAll"
         
@@ -109,6 +109,7 @@ class NetworkManager {
                 DispatchQueue.main.async {
                     
                     self?.realmManager.updatePhotos(for: photo)
+                    callback()
                 }
             } catch {
                 print(error.localizedDescription)

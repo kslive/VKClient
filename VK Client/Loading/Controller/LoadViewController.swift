@@ -21,7 +21,7 @@ class LoadViewController: UIViewController {
         
         networkManager.fetchRequestFriends()
         networkManager.fetchRequestGroupsUser()
-        networkManager.fetchRequestPhotosUser(for: 0)
+        networkManager.fetchRequestPhotosUser(for: 0) {}
     }
     
     override func viewWillAppear(_ animated: Bool) {
