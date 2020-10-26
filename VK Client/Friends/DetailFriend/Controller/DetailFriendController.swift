@@ -32,8 +32,7 @@ class DetailFriendController: UICollectionViewController {
     
     func fetchRequestPhotosUser(for id: Int?) {
         
-        self.networkManager.fetchRequestPhotosUser(for: id)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+        self.networkManager.fetchRequestPhotosUser(for: id) { [weak self] in
             
             do {
                 
@@ -43,12 +42,11 @@ class DetailFriendController: UICollectionViewController {
                 
                 self?.friendsImage = Array(photo).first
                 
+                self?.collectionView.reloadData()
             } catch {
                 
                 print(error)
             }
-            
-            self?.collectionView.reloadData()
         }
     }
     
