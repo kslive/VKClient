@@ -630,10 +630,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyD-ak-fTS" customClass="LikeControl" customModule="VK_Client" customModuleProvider="target">
-                                                    <rect key="frame" x="374" y="607" width="25" height="20"/>
+                                                    <rect key="frame" x="369" y="602" width="30" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="K1H-tg-Ikv"/>
-                                                        <constraint firstAttribute="height" constant="20" id="O8M-fH-67q"/>
+                                                        <constraint firstAttribute="width" constant="30" id="K1H-tg-Ikv"/>
+                                                        <constraint firstAttribute="height" constant="25" id="O8M-fH-67q"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
