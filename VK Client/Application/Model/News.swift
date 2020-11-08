@@ -20,7 +20,7 @@ struct NewsModel: Codable {
     var creatorName: String?
     var photosUrl: [String]? {
         get {
-            let photosUrl = attachments?.compactMap{ $0.photo?.sizes?.last?.url }
+            let photosUrl = attachments?.compactMap{ $0.photo?.sizes?.first?.url }
             return photosUrl
         }
     }

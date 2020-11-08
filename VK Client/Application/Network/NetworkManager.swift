@@ -188,7 +188,7 @@ class NetworkManager {
         
         urlComponents.queryItems = [
             URLQueryItem(name: "filters", value: "post"),
-            URLQueryItem(name: "count", value: "50"),
+            URLQueryItem(name: "count", value: "100"),
             URLQueryItem(name: "access_token", value: Session.shared.token),
             URLQueryItem(name: "v", value: constants.versionAPI)
         ]
