@@ -10,6 +10,7 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
+    private let refreshControl = UIRefreshControl()
     private let networkManager = NetworkManager()
     
     var news = [NewsModel]()
@@ -20,6 +21,14 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         fetchRequestNews()
+        setupRefreshControl()
+    }
+    
+    func setupRefreshControl() {
+        
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func fetchRequestNews() {
@@ -32,6 +41,16 @@ class NewsViewController: UIViewController {
                 self?.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
             }
         }
+        
+        refreshControl.endRefreshing()
+    }
+}
+
+extension NewsViewController {
+    
+    @objc private func reload() {
+        
+        fetchRequestNews()
     }
 }
 
