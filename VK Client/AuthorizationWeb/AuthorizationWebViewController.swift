@@ -82,13 +82,13 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
         guard token != nil,
               let user = userID else { return }
         
+        Session.shared.token = token!
         firebaseManager.saveUser(userID: user)
         firebaseManager.configureAuthorization()
         
         let loadViewController = storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
         present(loadViewController, animated: true, completion: nil)
         
-        Session.shared.token = token!
         decisionHandler(.cancel)
     }
 }

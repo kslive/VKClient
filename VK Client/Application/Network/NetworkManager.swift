@@ -180,4 +180,52 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+    // MARK: - News
+    
+    func fetchRequestNews(completion: @escaping ([NewsModel]) -> Void) {
+        urlComponents.path = "/method/newsfeed.get"
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "filters", value: "post"),
+            URLQueryItem(name: "count", value: "50"),
+            URLQueryItem(name: "access_token", value: Session.shared.token),
+            URLQueryItem(name: "v", value: constants.versionAPI)
+        ]
+        
+        
+        let task = session.dataTask(with: urlComponents.url!) { (data, response, error) in
+            
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            guard var news = try? decoder.decode(Response<NewsModel>.self, from: data).response?.items else { return }
+            guard let profiles = try? decoder.decode(ResponseNews.self, from: data).response.profiles else { return }
+            guard let groups = try? decoder.decode(ResponseNews.self, from: data).response.groups else { return }
+            
+            for i in 0..<news.count {
+                if news[i].sourceId < 0 {
+                    let group = groups.first(where: { $0.id == -news[i].sourceId })
+                    news[i].avatarUrl = group?.photo100
+                    news[i].creatorName = group?.name
+                } else {
+                    let profile = profiles.first(where: { $0.id == news[i].sourceId })
+                    news[i].avatarUrl = profile?.photo100
+                    news[i].creatorName = profile?.firstName
+                }
+            }
+            
+            DispatchQueue.main.async {
+                completion(news)
+            }
+        }
+        
+        DispatchQueue.global(qos: .utility).async {
+            task.resume()
+        }
+        
+    }
 }

@@ -10,12 +10,13 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
+    private let networkManager = NetworkManager()
+    
     var friendsNews = [User]()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }

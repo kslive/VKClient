@@ -12,8 +12,8 @@ struct NetworkConstants {
     
     let scheme = "https"
     let versionAPI = "5.68"
-    let scope = "262150"
+    let scope = "wall, friends, photos"
     let host = "api.vk.com"
     
-    let clientID = "7628396"
+    let clientID = "7655330"
 }
