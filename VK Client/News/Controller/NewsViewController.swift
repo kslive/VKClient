@@ -38,7 +38,7 @@ class NewsViewController: UIViewController {
             self.news = news
             
             OperationQueue.main.addOperation { [weak self] in
-                self?.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+                self?.tableView.reloadData()
             }
         }
         
@@ -64,9 +64,9 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
         
-        let newsModel = news[indexPath.row]
+        let newsItem = news[indexPath.row]
         
-        cell.configure(for: newsModel)
+        cell.configure(for: newsItem)
         
         return cell
     }

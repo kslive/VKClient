@@ -27,9 +27,8 @@ struct NewsModel: Codable {
     
     func getStringDate() -> String {
         let dateFormatter = DateFormatterVK()
-        return dateFormatter.convertDate(timeIntervalSince1970: date)
+        return dateFormatter.convertDate(timestamp: date)
     }
-    
 }
 
 struct Attachment: Codable {

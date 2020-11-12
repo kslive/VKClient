@@ -12,10 +12,10 @@ class DateFormatterVK {
     
     let dateFormatter = DateFormatter()
     
-    func convertDate(timeIntervalSince1970: Double) -> String{
+    func convertDate(timestamp: Double) -> String{
         dateFormatter.dateFormat = "MM-dd-yyyy HH.mm"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        let date = Date(timeIntervalSince1970: timeIntervalSince1970)
+        let date = Date(timeIntervalSince1970: timestamp)
         return dateFormatter.string(from: date)
     }
 }
