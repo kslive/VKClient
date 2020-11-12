@@ -74,21 +74,21 @@ extension AuthorizationWebViewController: WKNavigationDelegate {
                 return dict
             }
         
-        let token = params["access_token"]
+        let tokens = params["access_token"]
         let userID = params["user_id"]
         
         Session.shared.userId = Int(userID ?? "")
         
-        guard token != nil,
+        guard let token = tokens,
               let user = userID else { return }
         
+        Session.shared.token = token
         firebaseManager.saveUser(userID: user)
         firebaseManager.configureAuthorization()
         
         let loadViewController = storyboard!.instantiateViewController(withIdentifier: "LoadView") as UIViewController
         present(loadViewController, animated: true, completion: nil)
         
-        Session.shared.token = token!
         decisionHandler(.cancel)
     }
 }

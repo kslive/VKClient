@@ -20,18 +20,26 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var nameGroup: UILabel!
     @IBOutlet weak var dateGroup: UILabel!
     @IBOutlet weak var textFromGroup: UILabel!
-    @IBOutlet weak var imageFromGroup: UIImageView!
+    @IBOutlet weak var commentsCountLabel: UILabel!
+    @IBOutlet weak var likeControl: LikeControl!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    func configure(for model: User) {
+    func configure(for model: NewsModel) {
         
-//        nameGroup.text = model.nameSurnameFriend
-//        imageGroup.image = UIImage(named: model.imageFriend.last!)
-//        dateGroup.text = "\(Int.random(in: 1...31)).\(Int.random(in: 1...12)).\(Int.random(in: 2018...2020))"
-//        imageFromGroup.image = UIImage(named: model.imageFriend.first!)
-//        textFromGroup.text = "\(model.nameSurnameFriend) опубликовал новое фото!"
+        self.dateGroup.text = model.getStringDate()
+        self.textFromGroup.text = model.text
+        self.likeControl.setLike(count: model.likes.count)
+        self.nameGroup.text = model.creatorName
+        self.commentsCountLabel.text = "\(model.comments.count)"
+        
+        DispatchQueue.global().async {
+            
+            guard let url = model.avatarUrl,
+                  let imageURL = URL(string: url),
+                  let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.imageGroup.image = UIImage(data: imageData)
+            }
+        }
     }
 }
