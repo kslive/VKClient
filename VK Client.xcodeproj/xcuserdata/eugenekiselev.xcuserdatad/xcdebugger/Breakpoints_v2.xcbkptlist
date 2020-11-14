@@ -634,8 +634,8 @@
             filePath = "VK Client/Application/Network/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "fetchRequestPhotosUser(for:callback:)"
             landmarkType = "7">
          </BreakpointContent>
