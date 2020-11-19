@@ -14,5 +14,5 @@
 - Работа с API VK.
 - Realm. 
 - Firebase.
-- Кеширование изобраения/FileManager.
+- Кеширование изображений/FileManager.
 - Архитектура проекта: MVC.
