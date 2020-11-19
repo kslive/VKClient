@@ -43,16 +43,9 @@ class DetailFriendCell: UICollectionViewCell {
         activityIndicator.startAnimating()
     }
     
-    func configure(for model: Sizes) {
+    func configure(for model: Sizes, detailFriendImage: UIImage?) {
         
-        guard let url = model.src,
-              let imageURL = URL(string: url),
-              let imageData = try? Data(contentsOf: imageURL) else { return }
-        
-        DispatchQueue.main.async { [weak self] in
-            
-            self?.detailFriendImage.image = UIImage(data: imageData)
-        }
+        self.detailFriendImage.image = detailFriendImage
         
         activityIndicator.stopAnimating()
     }

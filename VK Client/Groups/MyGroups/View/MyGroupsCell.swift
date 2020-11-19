@@ -36,19 +36,11 @@ class MyGroupsCell: UITableViewCell {
         self.myGroupImage.layer.add(animation, forKey: nil)
     }
     
-    func configure(for model: Group) {
+    func configure(for model: Group, myGroupImage: UIImage?) {
         
         guard let name = model.name else { return }
         
         myGroupNameLabel.text = name
-        
-        guard let url = model.photo50,
-              let imageURL = URL(string: url),
-              let imageData = try? Data(contentsOf: imageURL) else { return }
-        
-        DispatchQueue.main.async { [weak self] in
-            
-            self?.myGroupImage.image = UIImage(data: imageData)
-        }
+        self.myGroupImage.image = myGroupImage
     }
 }

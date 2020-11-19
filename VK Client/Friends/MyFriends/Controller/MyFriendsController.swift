@@ -11,6 +11,7 @@ import RealmSwift
 
 class MyFriendsController: UITableViewController {
     
+    private var photoService: PhotoService!
     let searchController = UISearchController(searchResultsController: nil)
     var friends: Results<User>!
     var filteredUsers = [User]()
@@ -29,9 +30,11 @@ class MyFriendsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.sectionIndexColor = .white
+        photoService = PhotoService(container: tableView)
+        
         fetchRequestFriends()
         setupSearchController()
-        tableView.sectionIndexColor = .white
         bindTableAndRealm()
     }
     
@@ -111,7 +114,10 @@ class MyFriendsController: UITableViewController {
             myFriend = friends[indexPath.row]
         }
         
-        cell.configure(for: myFriend)
+        guard let image = myFriend.photo100,
+              let friendImage = photoService.photo(at: indexPath, by: image) else { return cell }
+        
+        cell.configure(for: myFriend, friendImage: friendImage)
         
         return cell
     }
