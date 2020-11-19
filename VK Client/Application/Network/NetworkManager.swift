@@ -15,6 +15,7 @@ class NetworkManager {
     private let configuration: URLSessionConfiguration!
     private let session: URLSession!
     private let realmManager = RealmManager()
+    private let queue = OperationQueue()
     
     init() {
         
@@ -130,25 +131,16 @@ class NetworkManager {
             URLQueryItem(name: "v", value: constants.versionAPI)
         ]
         
-        session.dataTask(with: urlComponents.url!) { [weak self] (data, response, error) in
-            
-            guard let data = data else { return }
-            
-            do {
-                
-                let decoder = JSONDecoder()
-                
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                guard let groups = try decoder.decode(Response<Group>.self, from: data).response?.items else { return }
-                
-                DispatchQueue.main.async {
-                    
-                    self?.realmManager.updateGroups(for: groups)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        let getDataOperation = GetDataOperation(urlRequest: urlComponents.url!)
+        queue.addOperation(getDataOperation)
+       
+        let parseDataOperation = ParseDataOperation<Group>()
+        parseDataOperation.addDependency(getDataOperation)
+        queue.addOperation(parseDataOperation)
+        
+        let savingDataOperation = SavingDataOperation<Group>()
+        savingDataOperation.addDependency(parseDataOperation)
+        queue.addOperation(savingDataOperation)
     }
     
     // MARK: Search Groups

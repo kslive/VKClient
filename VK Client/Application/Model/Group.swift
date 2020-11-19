@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Group: Object, Decodable {
+class Group: Object, Codable {
     
     @objc dynamic var id = 0
     @objc dynamic var name: String? = nil
