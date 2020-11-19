@@ -12,7 +12,6 @@ import RealmSwift
 class MyFriendsController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
-    let networkManager = NetworkManager()
     var friends: Results<User>!
     var filteredUsers = [User]()
     var token: NotificationToken?
