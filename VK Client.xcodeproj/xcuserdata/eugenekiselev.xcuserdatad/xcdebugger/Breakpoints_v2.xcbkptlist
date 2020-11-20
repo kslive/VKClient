@@ -78,8 +78,8 @@
             filePath = "VK Client/Friends/MyFriends/Controller/MyFriendsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "bindTableAndRealm()"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,8 +217,8 @@
             filePath = "VK Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "DetailFriendController"
             landmarkType = "3">
             <Locations>
@@ -340,8 +340,8 @@
             filePath = "VK Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "DetailFriendController"
             landmarkType = "3">
             <Locations>
@@ -463,8 +463,8 @@
             filePath = "VK Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "DetailFriendController"
             landmarkType = "3">
             <Locations>
@@ -586,8 +586,8 @@
             filePath = "VK Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "DetailFriendController"
             landmarkType = "3">
          </BreakpointContent>
@@ -618,8 +618,8 @@
             filePath = "VK Client/Friends/DetailFriend/Controller/DetailFriendController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -932,8 +932,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "pageViewController(_:viewControllerAfter:)"
-            landmarkType = "7">
+            landmarkName = "PageViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -31,18 +31,18 @@ class NewsViewController: UIViewController {
         tableView.addSubview(refreshControl)
     }
     
-    func fetchRequestNews() {
+    func fetchRequestNews(callback: (([NewsModel]) -> ())? = nil) {
         
         networkManager.fetchRequestNews { news in
             
             self.news = news
             
+            callback?(news)
+            
             OperationQueue.main.addOperation { [weak self] in
                 self?.tableView.reloadData()
             }
         }
-        
-        refreshControl.endRefreshing()
     }
 }
 
@@ -50,7 +50,14 @@ extension NewsViewController {
     
     @objc private func reload() {
         
-        fetchRequestNews()
+        fetchRequestNews { [weak self] news in
+            guard let self = self else { return }
+            
+            self.refreshControl.endRefreshing()
+            
+            guard news.count > 0 else { return }
+            self.news = news + self.news
+        }
     }
 }
 
