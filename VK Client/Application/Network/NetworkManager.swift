@@ -186,14 +186,15 @@ class NetworkManager {
     
     // MARK: - News
     
-    func fetchRequestNews(completion: @escaping ([NewsModel]) -> Void) {
+    func fetchRequestNews(startFrom: String = "",completion: @escaping ([NewsModel], String) -> Void) {
         urlComponents.path = "/method/newsfeed.get"
         
         urlComponents.queryItems = [
             URLQueryItem(name: "filters", value: "post"),
-            URLQueryItem(name: "count", value: "100"),
+            URLQueryItem(name: "count", value: "20"),
             URLQueryItem(name: "access_token", value: Session.shared.token),
-            URLQueryItem(name: "v", value: constants.versionAPI)
+            URLQueryItem(name: "v", value: constants.versionAPI),
+            URLQueryItem(name: "start_from", value: startFrom)
         ]
         
         
@@ -208,7 +209,8 @@ class NetworkManager {
             guard var news = try? decoder.decode(Response<NewsModel>.self, from: data).response?.items else { return }
             guard let profiles = try? decoder.decode(ResponseNews.self, from: data).response.profiles else { return }
             guard let groups = try? decoder.decode(ResponseNews.self, from: data).response.groups else { return }
-            
+            guard let nextForm = try? decoder.decode(ResponseNews.self, from: data).response.nextFrom else { return }
+                
             for i in 0..<news.count {
                 if news[i].sourceId < 0 {
                     let group = groups.first(where: { $0.id == -news[i].sourceId })
@@ -222,7 +224,7 @@ class NetworkManager {
             }
             
             DispatchQueue.main.async {
-                completion(news)
+                completion(news, nextForm)
             }
         }
         
