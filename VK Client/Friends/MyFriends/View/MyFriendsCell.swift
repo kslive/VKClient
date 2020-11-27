@@ -36,20 +36,12 @@ class MyFriendsCell: UITableViewCell {
         self.friendImage.layer.add(animation, forKey: nil)
     }
     
-    func configure(for model: User) {
+    func configure(for model: User, friendImage: UIImage) {
         
         guard let name = model.firstName,
               let lastName = model.lastName else { return }
         
         nameSurnameLabel.text = name + " " + lastName
-        
-        guard let url = model.photo100,
-              let imageURL = URL(string: url),
-              let imageData = try? Data(contentsOf: imageURL) else { return }
-        
-        DispatchQueue.main.async { [weak self] in
-            
-            self?.friendImage.image = UIImage(data: imageData)
-        }
+        self.friendImage.image = friendImage
     }
 }
